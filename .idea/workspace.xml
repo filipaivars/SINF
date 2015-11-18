@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f2128b4-7c42-45d3-afb6-3dca2afa8819" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SINF.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/.tmp/styles/main.css" afterPath="$PROJECT_DIR$/webapp/.tmp/styles/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/app/index.html" afterPath="$PROJECT_DIR$/webapp/app/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SINF.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +28,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/app/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32180852">
+            <state vertical-scroll-proportion="1.7752659">
               <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#md-card#0;n#md-content#0;n#md-content#0;n#md-content#0;n#md-content#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -256,12 +252,12 @@
       <created>1447887029033</created>
       <option name="number" value="Default" />
       <updated>1447887029033</updated>
-      <workItem from="1447887030437" duration="246000" />
+      <workItem from="1447887030437" duration="337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246000" />
+    <option name="totallyTimeSpent" value="337000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
@@ -301,7 +297,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/webapp/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32180852">
+        <state vertical-scroll-proportion="1.7752659">
           <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#md-card#0;n#md-content#0;n#md-content#0;n#md-content#0;n#md-content#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
