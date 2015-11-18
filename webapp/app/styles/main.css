@@ -7,8 +7,12 @@ body {
     top: 85px;
     padding-left: 100px;
     padding-right: 100px;
+    background-color: #EFEFEF;
 }
+.myLayout{
+    background-color: #EFEFEF;
 
+}
 [ng-href] {
     color: #2C2C2C;
 }

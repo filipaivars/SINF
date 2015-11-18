@@ -9,7 +9,8 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -29,6 +30,15 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/Chart.js/Chart.js"></script>
     <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="bower_components/angular-permission/dist/angular-permission.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+
     <!-- endbower -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
@@ -54,119 +64,126 @@
             </ul>
         </div>
 
-        <div layout="column">
 
-            <div id="um" flex="35">
-                <div layout="row">
-                    <div id="layout25" flex="25">
-                        [flex]
-                    </div>
-                    <div id="layout75" flex="75">
-                        [flex]
-                    </div>
-                </div>
-            </div>
-            <div id="dois" flex="15">
-                ola 2
-            </div>
-            <div id="tres" flex="50">
-                ola3
-            </div>
+        <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+            <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+                <md-content class="myLayout" layout-fill layout="column" layout-align="center center" >
 
-        </div>
+                    <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
 
-        <md-content layout-fill layout="column" layout-align="center center" class="md-default-theme">
-            <md-content layout-fill layout="row" layout-align="center center" class="md-default-theme">
+                        <md-card class="md-whiteframe-1dp" style="width:50%">
+                            <md-card-content layout-padding>
+                                ola1
+                            </md-card-content>
+                        </md-card>
+                        <md-card class="md-whiteframe-1dp" style="width:50%">
+                            <md-card-content layout-padding>
+                                ola2
+                            </md-card-content>
+                        </md-card>
 
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola1
-                    </md-card-content>
-                </md-card>
+                    </md-content>
+                    <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
 
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola2
-                    </md-card-content>
-                </md-card>
+                        <md-card class="md-whiteframe-1dp" style="width:100%">
+                            <md-card-content layout-padding>
+                                ola5
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                                <p></p>
+                                la
+                                <p></p>
+                                la
+                                <p></p>
+                                la
+                                <p></p>
+                            </md-card-content>
+                        </md-card>
 
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola3
-                    </md-card-content>
-                </md-card>
+                    </md-content>
 
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola4
-                    </md-card-content>
-                </md-card>
+
+
+                </md-content>
+                <md-content class="myLayout" layout-fill layout="column" layout-align="center center" >
+
+                    <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+                        <md-card class="md-whiteframe-1dp" style="width:50%">
+                            <md-card-content layout-padding>
+                                ola3
+                            </md-card-content>
+                        </md-card>
+                        <md-card class="md-whiteframe-1dp" style="width:50%">
+                            <md-card-content layout-padding>
+                                ola4
+                            </md-card-content>
+                        </md-card>
+
+                    </md-content>
+                    <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+                        <md-card class="md-whiteframe-1dp" style="width:50%">
+                            <md-card-content layout-padding>
+                                ola6
+                            </md-card-content>
+                        </md-card>
+                        <md-card class="md-whiteframe-1dp" style="width:50%">
+                            <md-card-content layout-padding>
+                                ola7
+                            </md-card-content>
+                        </md-card>
+
+                    </md-content>
+                    <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+                        <md-card class="md-whiteframe-1dp" style="width:100%">
+                            <md-card-content layout-padding>
+                                ola8
+                            </md-card-content>
+                        </md-card>
+
+                    </md-content>
+
+
+
+                </md-content>
             </md-content>
+        </md-content>
 
-            <md-content layout-fill layout="row" layout-align="center center" class="md-default-theme">
 
+
+        <!--<md-content flex="50" class="myLayout" layout-fill layout="column" layout-align="center center" >
+            <md-content flex="25" class="myLayout" layout-fill layout="row" layout-align="center center" style="height:100%" >
                 <md-card class="md-whiteframe-1dp" style="width:50%">
                     <md-card-content layout-padding>
                         ola1
                     </md-card-content>
                 </md-card>
 
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola3
-                    </md-card-content>
-                </md-card>
-
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola4
-                    </md-card-content>
-                </md-card>
-            </md-content>
-
-            <md-content layout-fill layout="row" layout-align="center center" class="md-default-theme">
-
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola1
-                    </md-card-content>
-                </md-card>
-
-                <md-card class="md-whiteframe-1dp" style="width:25%">
+                <md-card class="md-whiteframe-1dp" style="width:50%">
                     <md-card-content layout-padding>
                         ola2
                     </md-card-content>
                 </md-card>
-
-                <md-card class="md-whiteframe-1dp" style="width:25%">
+            </md-content>
+            <md-content flex="75" class="myLayout" layout-fill layout="row" layout-align="center center" style="height:200%" >
+                <md-card class="md-whiteframe-1dp" style="width:100%">
                     <md-card-content layout-padding>
                         ola3
                     </md-card-content>
                 </md-card>
-
-                <md-card class="md-whiteframe-1dp" style="width:25%">
-                    <md-card-content layout-padding>
-                        ola4
-                    </md-card-content>
-                </md-card>
             </md-content>
         </md-content>
-
-
+        -->
     </div>
 
 
-
-
-
-<!--    <div class="footer">
-        <div class="container">
-        </div>
-    </div>
--->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
         !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
                     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
                 r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
