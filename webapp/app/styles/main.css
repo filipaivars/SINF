@@ -1,0 +1,83 @@
+
+body {
+  padding: 0;
+}
+
+.wrap{
+    top: 85px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+[ng-href] {
+    color: #2C2C2C;
+}
+#layout25{
+    background-color: #A0A000;
+}
+#layout75{
+    background-color: #0b97c4;
+}
+#um{
+    background-color: #2aabd2;
+}
+#dois{
+    background-color: #00d6b2;
+}
+
+a{
+    color: #F15C24;
+}
+.navbar-collapse {
+    padding-left: 0px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #CCCCCB;
+    background-color: #2C2C2C;
+    height: 70px;
+}
+/* import local font
+@font-face {
+    font-family: ptSans;
+    src: local('PT_Sans-Web-Regular.ttf');
+}
+*/
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+    font-family: "PT Sans";
+    color: #FFFFFF;
+    padding-top: 15px;
+    padding-left: 100px;
+}
+
+
+/*.container{
+    top: 85px;
+}
+*/
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /*.container {
+    max-width: 730px;
+  }
+  */
+
+  /* Remove the padding we set earlier */
+  .header{
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+}
+
+.carddemoBasicUsage md-card {
+    height: 150px;
+    width: 100px;
+}

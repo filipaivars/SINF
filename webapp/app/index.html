@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js(.) scripts/vendor.js -->
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/Chart.js/Chart.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <!-- endbower -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <!-- endbuild -->
+    <!-- endbuild -->
+</head>
+<body ng-app="sinfApp">
+
+    <div class="header">
+        <h3>INFORMAÇÃO DE VENDAS</h3>
+    </div>
+
+    <div class="wrap">
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/">MÊS</a></li>
+                <li><a ng-href="#/">TRIMESTRE</a></li>
+                <li><a ng-href="#/">SEMESTRE</a></li>
+                <li><a ng-href="#/">ANO</a></li>
+            </ul>
+        </div>
+
+        <div layout="column">
+
+            <div id="um" flex="35">
+                <div layout="row">
+                    <div id="layout25" flex="25">
+                        [flex]
+                    </div>
+                    <div id="layout75" flex="75">
+                        [flex]
+                    </div>
+                </div>
+            </div>
+            <div id="dois" flex="15">
+                ola 2
+            </div>
+            <div id="tres" flex="50">
+                ola3
+            </div>
+
+        </div>
+
+        <md-content layout-fill layout="column" layout-align="center center" class="md-default-theme">
+            <md-content layout-fill layout="row" layout-align="center center" class="md-default-theme">
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola1
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola2
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola3
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola4
+                    </md-card-content>
+                </md-card>
+            </md-content>
+
+            <md-content layout-fill layout="row" layout-align="center center" class="md-default-theme">
+
+                <md-card class="md-whiteframe-1dp" style="width:50%">
+                    <md-card-content layout-padding>
+                        ola1
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola3
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola4
+                    </md-card-content>
+                </md-card>
+            </md-content>
+
+            <md-content layout-fill layout="row" layout-align="center center" class="md-default-theme">
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola1
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola2
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola3
+                    </md-card-content>
+                </md-card>
+
+                <md-card class="md-whiteframe-1dp" style="width:25%">
+                    <md-card-content layout-padding>
+                        ola4
+                    </md-card-content>
+                </md-card>
+            </md-content>
+        </md-content>
+
+
+    </div>
+
+
+
+
+
+<!--    <div class="footer">
+        <div class="container">
+        </div>
+    </div>
+-->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+                    (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+                r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+        }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
+    <script type="text/javascript">
+        angular
+        .module('sinfApp', ['ngMaterial'])
+        .run(function ($log) {
+        $log.debug("sinfApp + ngMaterial running...");
+        });
+    </script>
+
+</body>
+</html>
