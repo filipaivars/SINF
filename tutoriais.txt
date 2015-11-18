@@ -1,0 +1,15 @@
+TUTORIAL
+——————————
+
+https://www.mobomo.com/2014/9/how-to-set-up-angular-with-rails/
+
+http://start.jcolemorrison.com/setting-up-an-angularjs-and-rails-4-1-project/
+
+http://www.sitepoint.com/kickstart-your-angularjs-development-with-yeoman-grunt-and-bower/
+
+http://newtriks.com/2013/06/11/automating-angularjs-with-yeoman-grunt-and-bower/
+
+http://www.toptal.com/angular-js/your-first-angularjs-app-part-2-scaffolding-building-and-testing
+
+
+npm install i -g generator-angular generator-karma yo
