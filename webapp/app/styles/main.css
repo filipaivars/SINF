@@ -16,20 +16,8 @@ body {
 [ng-href] {
     color: #2C2C2C;
 }
-#layout25{
-    background-color: #A0A000;
-}
-#layout75{
-    background-color: #0b97c4;
-}
-#um{
-    background-color: #2aabd2;
-}
-#dois{
-    background-color: #00d6b2;
-}
 
-a{
+li a{
     color: #F15C24;
 }
 .navbar-collapse {
