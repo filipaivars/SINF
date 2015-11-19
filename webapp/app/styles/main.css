@@ -24,7 +24,7 @@ body {
   height: 100%;
   display: flex;
 }
-{
+
 [ng-href] {
     color: #2C2C2C;
 }
