@@ -15,46 +15,10 @@
   </div>
 
 
-  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
-    <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
-      <md-content class="myLayout" layout-fill layout="column" layout-align="center center" >
+  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" flex style="max-height = 100%">
+    <md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex="50">
 
-        <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
-
-          <md-card class="md-whiteframe-1dp" style="width:45%">
-            <md-card-content layout-padding>
-              <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
-                <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
-                chart-labels="labels" chart-legend="false"></canvas>
-              </div>
-            </md-card-content>
-          </md-card>
-          <md-card class="md-whiteframe-1dp" style="width:45%">
-            <md-card-content layout-padding>
-              <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
-                <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
-                chart-labels="labels" chart-legend="false"></canvas>
-              </div>
-          </md-card-content>
-        </md-card>
-
-      </md-content>
-      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
-
-        <md-card class="md-whiteframe-1dp" style="width:92.5%">
-          <md-card-content layout-padding>
-            ola5
-          </md-card-content>
-        </md-card>
-
-      </md-content>
-
-
-
-    </md-content>
-    <md-content class="myLayout" layout-fill layout="column" layout-align="center center" >
-
-      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+      <md-content class="myLayout" layout-fill layout="row" layout-align="center center"  flex="25">
 
         <md-card class="md-whiteframe-1dp" style="width:45%">
           <md-card-content layout-padding>
@@ -62,14 +26,84 @@
               <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
               chart-labels="labels" chart-legend="false"></canvas>
             </div>
-        </md-card-content>
-      </md-card>
-      <md-card class="md-whiteframe-1dp" style="width:45%">
-        <md-card-content layout-padding>
-          <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
-            <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
-            chart-labels="labels" chart-legend="false"></canvas>
-          </div>
+          </md-card-content>
+        </md-card>
+        <md-card class="md-whiteframe-1dp" style="width:45%">
+          <md-card-content layout-padding>
+            <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+              <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+              chart-labels="labels" chart-legend="false"></canvas>
+            </div>
+          </md-card-content>
+        </md-card>
+
+      </md-content>
+      <md-content class="myLayout2" layout-fill layout="row" layout-align="center center" flex="50">
+
+        <md-card class="md-whiteframe-1dp" style="width:92.5%">
+          <md-card-content layout-padding>
+            <button
+            class="btn btn-primary"
+            mwl-date-modifier
+            date="calendarDay"
+            decrement="calendarView">
+            Previous
+          </button>
+
+          <button
+          class="btn btn-default"
+          mwl-date-modifier
+          date="calendarDay"
+          set-to-today>
+          Today
+        </button>
+
+        <button
+        class="btn btn-primary"
+        mwl-date-modifier
+        date="calendarDay"
+        increment="calendarView">
+        Next
+      </button>
+      <mwl-calendar
+      view="calendarView"
+      current-day="calendarDay"
+      events="events"
+      view-title="calendarTitle"
+      on-event-click="eventClicked(calendarEvent)"
+      on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+      edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+      delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+      on-edit-event-click="eventEdited(calendarEvent)"
+      on-delete-event-click="eventDeleted(calendarEvent)"
+      cell-is-open="true">
+    </mwl-calendar>
+  </md-card-content>
+</md-card>
+
+</md-content>
+
+
+
+</md-content>
+<md-content class="myLayout" layout-fill layout="column" layout-align="center center" >
+
+  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+    <md-card class="md-whiteframe-1dp" style="width:45%">
+      <md-card-content layout-padding>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+      </md-card-content>
+    </md-card>
+    <md-card class="md-whiteframe-1dp" style="width:45%">
+      <md-card-content layout-padding>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
       </md-card-content>
     </md-card>
 
@@ -82,25 +116,25 @@
           <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
           chart-labels="labels" chart-legend="false"></canvas>
         </div>
-    </md-card-content>
-  </md-card>
-  <md-card class="md-whiteframe-1dp" style="width:45%">
-    <md-card-content layout-padding>
-      <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
-        <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
-        chart-labels="labels" chart-legend="false"></canvas>
-      </div>
-  </md-card-content>
-</md-card>
+      </md-card-content>
+    </md-card>
+    <md-card class="md-whiteframe-1dp" style="width:45%">
+      <md-card-content layout-padding>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+      </md-card-content>
+    </md-card>
 
-</md-content>
-<md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+  </md-content>
+  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
 
-  <md-card class="md-whiteframe-1dp" style="width:92.5%">
-    <md-card-content layout-padding>
-      <div id="bar-chart" ng-controller="BarCtrl">
-              <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels"
-                      chart-series="series" chart-options="options"></canvas>
+    <md-card class="md-whiteframe-1dp" style="width:92.5%">
+      <md-card-content layout-padding>
+        <div id="bar-chart" ng-controller="BarCtrl">
+          <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels"
+          chart-series="series" chart-options="options"></canvas>
         </div>
       </div>
     </md-card-content>
@@ -108,8 +142,5 @@
 
 </md-content>
 
-
-
-</md-content>
 </md-content>
 </md-content>

@@ -19,7 +19,9 @@ angular
     'ngSanitize',
     'ngTouch',
     'ngMaterial',
-    'chart.js'
+    'chart.js',
+    'mwl.calendar',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider

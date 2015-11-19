@@ -17,8 +17,14 @@ body {
 }
 .myLayout{
     background-color: #EFEFEF;
-
 }
+.myLayout2{
+  background-color: #EFEFEF;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+{
 [ng-href] {
     color: #2C2C2C;
 }
@@ -94,6 +100,11 @@ li a{
     width: auto;
   }
 
+  .card {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+  }
   /* Remove the padding we set earlier */
   .header,
   .marketing,
