@@ -1,1 +1,115 @@
-lalala VENDAS
+
+<div class="header">
+  <h3>INFORMAÇÃO DE VENDAS</h3>
+</div>
+
+<div class="wrap">
+  <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#/">MÊS</a></li>
+      <li><a ng-href="#/">TRIMESTRE</a></li>
+      <li><a ng-href="#/">SEMESTRE</a></li>
+      <li><a ng-href="#/">ANO</a></li>
+    </ul>
+  </div>
+
+
+  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+    <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+      <md-content class="myLayout" layout-fill layout="column" layout-align="center center" >
+
+        <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+          <md-card class="md-whiteframe-1dp" style="width:45%">
+            <md-card-content layout-padding>
+              <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+                <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+                chart-labels="labels" chart-legend="false"></canvas>
+              </div>
+            </md-card-content>
+          </md-card>
+          <md-card class="md-whiteframe-1dp" style="width:45%">
+            <md-card-content layout-padding>
+              <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+                <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+                chart-labels="labels" chart-legend="false"></canvas>
+              </div>
+          </md-card-content>
+        </md-card>
+
+      </md-content>
+      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+        <md-card class="md-whiteframe-1dp" style="width:92.5%">
+          <md-card-content layout-padding>
+            ola5
+          </md-card-content>
+        </md-card>
+
+      </md-content>
+
+
+
+    </md-content>
+    <md-content class="myLayout" layout-fill layout="column" layout-align="center center" >
+
+      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+        <md-card class="md-whiteframe-1dp" style="width:45%">
+          <md-card-content layout-padding>
+            <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+              <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+              chart-labels="labels" chart-legend="false"></canvas>
+            </div>
+        </md-card-content>
+      </md-card>
+      <md-card class="md-whiteframe-1dp" style="width:45%">
+        <md-card-content layout-padding>
+          <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+            <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+            chart-labels="labels" chart-legend="false"></canvas>
+          </div>
+      </md-card-content>
+    </md-card>
+
+  </md-content>
+  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+    <md-card class="md-whiteframe-1dp" style="width:45%">
+      <md-card-content layout-padding>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+    </md-card-content>
+  </md-card>
+  <md-card class="md-whiteframe-1dp" style="width:45%">
+    <md-card-content layout-padding>
+      <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl">
+        <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+        chart-labels="labels" chart-legend="false"></canvas>
+      </div>
+  </md-card-content>
+</md-card>
+
+</md-content>
+<md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+  <md-card class="md-whiteframe-1dp" style="width:92.5%">
+    <md-card-content layout-padding>
+      <div id="bar-chart" ng-controller="BarCtrl">
+              <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels"
+                      chart-series="series" chart-options="options"></canvas>
+        </div>
+      </div>
+    </md-card-content>
+  </md-card>
+
+</md-content>
+
+
+
+</md-content>
+</md-content>
+</md-content>
