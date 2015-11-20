@@ -11,18 +11,22 @@ body {
 
 .wrap{
     top: 85px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 90px;
+    padding-right: 90px;
     background-color: #EFEFEF;
 }
 .myLayout{
     background-color: #EFEFEF;
 }
-.myLayout2{
-  background-color: #EFEFEF;
-  width: 100%;
-  height: 100%;
-  display: flex;
+
+.cal-month-day {
+  height: 76.5px;
+}
+.cal-year-box [class*="span"],
+.cal-month-box [class*="cal-cell"] {
+  min-height: 76.5px;
+  border-right: 1px solid #e1e1e1;
+  display: inline;
 }
 
 [ng-href] {
@@ -33,7 +37,7 @@ li a{
     color: #F15C24;
 }
 .navbar-collapse {
-    padding-left: 0px;
+    padding-left: 7.5px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -56,10 +60,11 @@ li a{
     margin-bottom: 0;
     line-height: 40px;
     padding-bottom: 19px;
-    font-family: "PT Sans";
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
     color: #FFFFFF;
     padding-top: 15px;
-    padding-left: 100px;
+    padding-left: 115px;
 }
 
 /* Custom page footer */
