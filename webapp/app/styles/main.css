@@ -345,3 +345,46 @@ li a:focus {
     border-bottom: 0;
   }
 }
+
+.btn-primaryleft{
+	background-color: rgb(241,92,37);
+	width:15%;
+	height:50px;
+	float:left;
+	border:0px;
+}
+
+.btn-primaryright{
+	background-color: rgb(241,92,37);
+	width:15%;
+	height:50px;
+	float:right;
+	border:0px;
+}
+
+.btn-default{
+	background-color: rgb(241,92,37);
+	width:70%;
+	height:50px;
+	border:0px;
+	padding:6px 12px;
+	
+}
+
+#navcontainer {
+	background-color:rgb(241,92,37);
+}
+
+#navcontainer ul li { 
+display: inline; }
+
+#navcontainer ul { 
+margin: 0;
+padding: 0;
+list-style-type: none;
+ }
+ 
+.layout-padding-calendar
+{
+padding-top:0px;	
+}
