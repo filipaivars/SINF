@@ -14,6 +14,11 @@ angular.module('sinfApp')
       'AngularJS',
       'Karma'
     ];
+    $scope.mes= 'tata';
+    $scope.meses=[
+      {name: 'lala', url: 'tata'},
+      {name: 'um', url: 'dois'}
+    ];
     $scope.calendarView = 'month';
     $scope.calendarDay = moment('2014-04-23T09:54:51');;
     $scope.events = [{

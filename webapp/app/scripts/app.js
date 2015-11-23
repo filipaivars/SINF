@@ -21,7 +21,7 @@ angular
     'ngMaterial',
     'chart.js',
     'mwl.calendar',
-    'ui.bootstrap'
+    'ui.bootstrap',
   ])
   .config(function ($routeProvider) {
     $routeProvider
