@@ -52,7 +52,7 @@
 
                   <md-card class="md-whiteframe-1dp" style="width:92.5%">
                     <div layout-align="center center" >
-                      <md-card-content layout-padding style="padding-bottom:0px">
+                      <md-card-content layout-padding style="padding:0px">
 					  <div id="navcontainer">
 						<ul>
 						<li>
@@ -64,14 +64,10 @@
                               <img src="../images/left.png">
                           </button>
 			            </li>
-						<li>
-                          <button
-                              class="btn btn-default"
-                              mwl-date-modifier
-                              date="calendarDay"
-                              set-to-today>
-                              Today
-                          </button>
+						<li >
+                         ´<div class="btn-middle">
+							 <h3 style="margin-top:10px"> {{ calendarTitle }} </h3>
+                         </div>
 						</li>
 						<li>
                           <button

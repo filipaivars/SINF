@@ -366,14 +366,19 @@ li a:focus {
 
 
 
-.btn-default{
+.btn-middle{
 	background-color: rgb(241,92,37);
-	width:70%;
+	width:69%;
 	height:50px;
 	border:0px;
 	padding:6px 12px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	color: white;
 	
 }
+
 
 #navcontainer {
 	background-color:rgb(241,92,37);

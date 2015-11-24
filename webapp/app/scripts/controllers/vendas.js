@@ -20,7 +20,7 @@ angular.module('sinfApp')
       {name: 'um', url: 'dois'}
     ];
     $scope.calendarView = 'month';
-    $scope.calendarDay = moment('2014-04-23T09:54:51');;
+    $scope.calendarDay = new Date();
     $scope.events = [{
       title: 'My event title', // The title of the event
       type: 'info', // The type of the event (determines its color). Can be important, warning, info, inverse, success or special
