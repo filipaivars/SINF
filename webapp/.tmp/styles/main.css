@@ -237,12 +237,19 @@ body {
     background-color: #EFEFEF;
 }
 
-.cal-month-day {
-  height: 76.5px;
+body > div.container > div > div.wrap.ng-scope > md-content > md-content:nth-child(1) > md-content:nth-child(2) > md-card > div > md-card-content > mwl-calendar > div > mwl-calendar-month > div.cal-row-fluid.cal-row-head {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 1px;
+  font-size: 11px;
 }
+
+.cal-month-day {
+  height: 79px;
+}
+
 .cal-year-box [class*="span"],
 .cal-month-box [class*="cal-cell"] {
-  min-height: 76.5px;
+  min-height: 79px;
   border-right: 1px solid #e1e1e1;
   display: inline;
 }
@@ -345,7 +352,7 @@ li a:focus {
   .jumbotron {
     border-bottom: 0;
   }
-  
+
    /* This is a single-line comment */
 }
 
@@ -377,7 +384,7 @@ li a:focus {
 	text-align: center;
 	vertical-align: middle;
 	color: white;
-	
+
 }
 
 
@@ -385,16 +392,16 @@ li a:focus {
 	background-color:rgb(241,92,37);
 }
 
-#navcontainer ul li { 
+#navcontainer ul li {
 display: inline; }
 
-#navcontainer ul { 
+#navcontainer ul {
 margin: 0;
 padding: 0;
 list-style-type: none;
  }
- 
+
 .layout-padding-calendar
 {
-padding-top:0px;	
+padding-top:0px;
 }
