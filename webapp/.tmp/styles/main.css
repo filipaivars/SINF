@@ -17,7 +17,7 @@ body {
 
 .divHome h1{
   font-family: 'PT Sans', sans-serif;
-  padding-top: 100px;
+  padding-top: 55px;
   text-align: left;
   padding-left: 25%;
   color: #2C2C2C;
@@ -32,7 +32,24 @@ a:hover{
   text-decoration: none;
   width: 100%;
 }
+.aparece {
+  display: none;
+  color: #FFFFFF;
+  text-align: left;
+  padding-left: 17.5%;
+  font-family: 'Raleway', sans-serif;
+  border-top: thin solid rgba(0,0,0,1);
+  border-bottom: thin solid rgba(0,0,0,1);
+}
 
+.divHome:hover .aparece{
+  display: block;
+  background-color: rgba(44,44,44,.75);
+}
+
+.divHome:hover .divHome{
+  background-color: #FFFFFF;
+}
 .wrap-dd-select {
   /* Size and position */
   position: relative;
