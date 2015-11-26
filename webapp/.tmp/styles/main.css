@@ -13,6 +13,8 @@ body {
    min-height: 720px;
    padding-top:100px;
    color: #FFFFFF;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 700;
 }
 
 .divHome h1{
@@ -36,10 +38,16 @@ a:hover{
   display: none;
   color: #FFFFFF;
   text-align: left;
-  padding-left: 17.5%;
+  
   font-family: 'Raleway', sans-serif;
+  font-weight: 300;
   border-top: thin solid rgba(0,0,0,1);
   border-bottom: thin solid rgba(0,0,0,1);
+}
+
+.notif {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
 }
 
 .divHome:hover .aparece{
