@@ -40,6 +40,21 @@ angular
         controller: 'VendasCtrl',
         controllerAs: 'vendas'
       })
+      .when('/empresarial',{
+        templateUrl: 'views/empresarial.html',
+        controller: 'EmpresarialCtrl',
+        controllerAs: 'empresarial'
+      })
+      .when('/financas',{
+        templateUrl: 'views/financas.html',
+        controller: 'FinancasCtrl',
+        controllerAs: 'financas'
+      })
+      .when('/reviews',{
+        templateUrl: 'views/reviews.html',
+        controller: 'ReviewsCtrl',
+        controllerAs: 'reviews'
+      })
       .otherwise({
         redirectTo: '/'
       });

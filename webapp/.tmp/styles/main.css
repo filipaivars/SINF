@@ -9,6 +9,30 @@ body {
   padding: 0;
 }
 
+.divHome{
+   min-height: 720px;
+   padding-top:100px;
+   color: #FFFFFF;
+}
+
+.divHome h1{
+  font-family: 'PT Sans', sans-serif;
+  padding-top: 100px;
+  text-align: left;
+  padding-left: 25%;
+  color: #2C2C2C;
+  font-size: 30px;
+}
+
+.divHome li{
+  list-style-type: none;
+}
+
+a:hover{
+  text-decoration: none;
+  width: 100%;
+}
+
 .wrap-dd-select {
   /* Size and position */
   position: relative;
