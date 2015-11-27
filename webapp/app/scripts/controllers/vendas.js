@@ -14,10 +14,20 @@ angular.module('sinfApp')
       'AngularJS',
       'Karma'
     ];
-    $scope.mes= 'tata';
+    $scope.mes= '1';
     $scope.meses=[
-      {name: 'lala', url: 'tata'},
-      {name: 'um', url: 'dois'}
+      {name: 'Nov, 2015', url: '1'},
+      {name: 'Dez, 2015', url: '2'},
+      {name: 'Jan, 2016', url: '3'},
+      {name: 'Fev, 2016', url: '4'},
+      {name: 'Mar, 2016', url: '5'},
+      {name: 'Abr, 2016', url: '6'},
+      {name: 'Abr, 2016', url: '7'},
+      {name: 'Abr, 2016', url: '8'},
+      {name: 'Abr, 2016', url: '9'},
+      {name: 'Abr, 2016', url: '10'},
+      {name: 'Abr, 2016', url: '11'},
+      {name: 'Abr, 2016', url: '12'},
     ];
     $scope.calendarView = 'month';
     $scope.calendarDay = new Date();
