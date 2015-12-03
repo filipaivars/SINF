@@ -14,4 +14,9 @@ angular.module('sinfApp')
     'AngularJS',
     'Karma'
   ];
+  $scope.items = [
+    {nome:'ola1', valor:'10'},
+    {nome:'ola2', valor: '5'},
+    {nome:'ola3', valor: '155'}
+  ];
 });
