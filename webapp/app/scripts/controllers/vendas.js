@@ -9,6 +9,17 @@
  */
 angular.module('sinfApp')
   .controller('VendasCtrl', function ($scope) {
+    $(function() { //equivalent to document.ready
+      $("#linkmes").addClass("temp");
+    });
+
+    $("#linksemestre,#linktrimestre,#linkano").click(function()
+    {
+        $("#linkmes").removeClass("temp");
+    }
+    );
+
+
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

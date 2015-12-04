@@ -38,7 +38,7 @@ a:hover{
   display: none;
   color: #FFFFFF;
   text-align: left;
-  
+
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   border-top: thin solid rgba(0,0,0,1);
@@ -300,6 +300,11 @@ body > div.container > div > div.wrap.ng-scope > md-content > md-content:nth-chi
   min-height: 79px;
   border-right: 1px solid #e1e1e1;
   display: inline;
+}
+
+.temp
+{
+  color: #F15C24;
 }
 
 li a{
