@@ -8,19 +8,15 @@
 * Controller of the sinfApp
 */
 angular.module('sinfApp')
-.controller('FinancasCtrl', function ($scope) {
+.controller('FinancasCtrl', function ($scope, $sce) {
   this.awesomeThings = [
     'HTML5 Boilerplate',
     'AngularJS',
     'Karma'
   ];
-  /**
-  $scope.items = [
-    {nome:'ola1', valor:'10'},
-    {nome:'ola2', valor: '5'},
-    {nome:'ola3', valor: '155'}
-  ];
-  */
+
+$scope.euroImg = $sce.trustAsResourceUrl('styles/euroazul.png'); 
+  
   Chart.defaults.global.colours = [
       { // orange
           fillColor: "#F79022",
