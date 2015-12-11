@@ -1,1 +1,164 @@
-lalala VENDAS
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="header" layout="row">
+  <h3 flex='85'>INFORMAÇÃO DE VENDAS</h3>
+    <a ng-href="#/home" flex='15'>
+  <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
+</a>
+</div>
+
+<div class="wrap">
+  <div class="collapse navbar-collapse" id="js-navbar-collapse">
+    <ul class="nav navbar-nav" style="width: 100%">
+      <li><a id="linkmes" ng-href="#/vendas">MÊS</a></li>
+      <li><a id="linktrimestre" ng-href="#/vendas">TRIMESTRE</a></li>
+      <li><a id="linksemestre" ng-href="#/vendas">SEMESTRE</a></li>
+      <li><a id="linkano" ng-href="#/vendas">ANO</a></li>
+      <li style="float: right; width:15%; top:7.5px; padding-right: 8px">
+        <form>
+          <div class="form-group">
+            <select class="form-control" ng-model="mes" ng-options="mes.url as mes.name for mes in meses" style="background-color: #2C2C2C; color: #FFFFFF"></select>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+<script>
+
+</script>
+
+
+  <md-content class="myLayout" layout-fill flex layout="row" layout-align="center start">
+    <md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex="50">
+      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+        <md-card class="md-whiteframe-1dp" flex="45">
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> local </h3>
+            <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_local">
+              <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+              chart-labels="labels" chart-legend="false"></canvas>
+            </div>
+          </md-card-content>
+        </md-card>
+        <md-card class="md-whiteframe-1dp" flex="45">
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> sazonal </h3>
+            <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_sazonal">
+              <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+              chart-labels="labels" chart-legend="false"></canvas>
+            </div>
+          </md-card-content>
+        </md-card>
+
+      </md-content>
+      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+
+        <md-card class="md-whiteframe-1dp" style="width:92.5%">
+          <div layout-align="center center" >
+            <md-card-content layout-padding style="padding:0px">
+              <div id="navcontainer">
+                <ul>
+                  <li>
+                    <button
+                    class="btn btn-primaryleft"
+                    mwl-date-modifier
+                    date="calendarDay"
+                    decrement="calendarView">
+                    <img src="../images/left.png">
+                  </button>
+                </li>
+                <li >
+                  <div class="btn-middle">
+                    <h3 style="margin-top:5px"> {{ calendarTitle }} </h3>
+                  </div>
+                </li>
+                <li>
+                  <button
+                  class="btn btn-primaryright"
+                  mwl-date-modifier
+                  date="calendarDay"
+                  increment="calendarView">
+                  <img src="../images/right.png">
+                </button>
+              </li>
+            </ul>
+
+          </div>
+          <mwl-calendar
+          view="calendarView"
+          current-day="calendarDay"
+          events="events"
+          view-title="calendarTitle"
+          on-event-click="eventClicked(calendarEvent)"
+          on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+          edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+          delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+          on-edit-event-click="eventEdited(calendarEvent)"
+          on-delete-event-click="eventDeleted(calendarEvent)"
+          cell-is-open="true">
+        </mwl-calendar>
+
+      </md-card-content>
+    </div>
+  </md-card>
+
+</md-content>
+</md-content>
+<md-content class="myLayout" layout-fill layout="column" layout-align="center center"  flex="50">
+  <md-content class="myLayout" layout-fill layout="row" flex layout-align="center center" >
+    <h3 style="position: absolute; font-size: 15px; margin-top: 20px; padding-left: 20px"> hora </h3>
+    <md-card class="md-whiteframe-1dp" flex="45" >
+      <md-card-content layout-padding>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_hora">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+      </md-card-content>
+    </md-card>
+    <md-card class="md-whiteframe-1dp" flex="45">
+      <md-card-content layout-padding>
+        <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> espetáculo </h3>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_espetaculo">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+      </md-card-content>
+    </md-card>
+  </md-content>
+  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+    <md-card class="md-whiteframe-1dp" flex="45">
+      <md-card-content layout-padding>
+        <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> idade </h3>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_idade">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+      </md-card-content>
+    </md-card>
+    <md-card class="md-whiteframe-1dp" flex="45">
+      <md-card-content layout-padding>
+        <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> tipo </h3>
+        <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_tipo">
+          <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+          chart-labels="labels" chart-legend="false"></canvas>
+        </div>
+      </md-card-content>
+    </md-card>
+  </md-content>
+  <md-content class="myLayout" layout-fill layout="row" layout-align="center center">
+    <md-card class="md-whiteframe-1dp" style="width:92.5%">
+      <md-card-content layout-padding>
+        <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 127.5px"> volume médio de vendas por dia da semana </h3>
+        <div id="bar-chart" ng-controller="BarCtrl">
+          <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels"
+          chart-series="series" chart-options="options"></canvas>
+        </div>
+      </md-card-content>
+    </md-card>
+  </md-content>
+</md-content>
+</md-content>
+</div>

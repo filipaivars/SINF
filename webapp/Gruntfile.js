@@ -1,4 +1,4 @@
-// Generated on 2015-11-16 using generator-angular 0.14.0
+// Generated on 2015-11-19 using generator-angular 0.14.0
 'use strict';
 
 // # Globbing
@@ -220,7 +220,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    },
+    }, 
 
     // Renames files for browser caching purposes
     filerev: {
@@ -338,7 +338,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'sinfApp',
+          module: 'testeApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },

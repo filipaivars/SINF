@@ -16,11 +16,15 @@ depois:
 
 em SINF-Master/webapp
 
-npm install -g bower
+npm install -g npm@latest
+
+npm install -g bower -save
 
 e depois
 
-bower install
+bower install -save
+
+npm install -g grunt-cli -save
 
 Por fim fazer
 
