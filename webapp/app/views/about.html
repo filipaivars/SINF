@@ -1,1 +1,81 @@
-<p>This is the about view.</p>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="header" layout="row">
+  <h3 flex='85'>INFORMAÇÃO FINANCEIRA</h3>
+  <a ng-href="#/home" flex='15'>
+    <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
+  </a>
+</div>
+
+<div>
+  <md-content class="myLayout" layout-fill flex layout="row" layout-align="center start">
+
+    <!--Esquerda-->
+    <md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex>
+      <!--Área 1 - Lucro Liquido-->
+      <md-content class="myLayout" layout-fill layout="row" layout-align="center center">
+        <md-card class="md-whiteframe-1dp"  style="width:93%">
+          <md-card-content layout-padding>
+            <div>
+              <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left:5px">Lucro Liquido</h3>
+            </div>
+          </md-card-content>
+        </md-card>
+      </md-content>
+
+      <!--Área 2 e 3 -->
+      <md-content class="myLayout" layout-fill layout="row" layout-align="center center">
+        <!--Área 2 - Postos de Venda -->
+        <md-card class="md-whiteframe-1dp" flex="45">
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left:5px">Postos de Venda</h3>
+            <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_lucro">
+              <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+              chart-labels="labels" chart-legend="false"></canvas>
+            </div>
+          </md-card-content>
+        </md-card>
+        <!--Área 3 - Custos Fixos -->
+        <md-card class="md-whiteframe-1dp" flex="45">
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left:5px">Custos Fixos</h3>
+          </md-card-content>
+        </md-card>
+      </md-content>
+    </md-content>
+
+
+    <!--Direita -->
+    <md-content class="myLayout" layout-fill layout="row" layout-align="center stretch" flex>
+      <!--Área 4 e 5 -->
+      <md-content class="myLayout" layout-fill layout="column" layout-align="center stretch">
+        <!--Área 4 -->
+        <md-card class="md-whiteframe-1dp" flex>
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left:5px">LUCRO operacional</h3>
+            <img ng-src="{{euroImg}}" style="height: 150px">
+          </md-card-content>
+        </md-card>
+        <!--Área 5 -->
+        <md-card class="md-whiteframe-1dp" flex>
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left:5px">CUSTOS variáveis</h3>
+          </md-card-content>
+        </md-card>
+      </md-content>
+
+      <!--Área 6 -->
+      <md-content class="myLayout" layout-fill layout="column" layout-align="center center">
+        <md-card class="md-whiteframe-1dp" style="height:93%">
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left:5px">DESPESAS</h3>
+          </md-card-content>
+        </md-card>
+      </md-content>
+
+    </md-content>
+
+  </md-content>
+</div>
