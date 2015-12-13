@@ -1,13 +1,54 @@
-#lucro-liquido-nr{
+#titulo-despesas{
   font-family: 'PT Sans', sans-serif;
-  font-size: 85px;
+  color: #11998c;
+  font-size: 35px;
+  text-align: center;
+  }
+
+#lista-despesas{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
   color: #2d2d2c;
 }
+
+#total-despesas{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 25px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+#titulo-chart{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15px; 
+  text-align: center;
+}
+
+#lucro-liquido-nr{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 75px;
+  color: #2d2d2c;
+  text-align: center;
+}
+
+#lucro-operacional-nr{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 30px;
+  color: #2d2d2c;
+}
+
 #lucro-liquido{
   font-family: 'PT Sans', sans-serif;
   font-size: 60px;
   color: #11998c;
   padding-left: 55px;
+}
+
+#lucro-operacional{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  color: #11998c;
+  text-align: center;
 }
 
 .browsehappy {
