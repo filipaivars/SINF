@@ -1,11 +1,73 @@
-<p>This is the INFORMAÇÃO FINANCEIRA view.</p>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-lala
-<div>
-<ul>
-  <li ng-repeat="dog in items">
-    {{dog.nome}} - {{dog.valor}}
-  </li>
-</ul>
+<div class="header" layout="row">
+  <h3 flex='85'>INFORMAÇÃO FINANCEIRA</h3>
+  <a ng-href="#/home" flex='15'>
+    <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
+  </a>
 </div>
-uiui
+
+<div class="wrap">
+  <div layout="row" layout-align="space-between stretch" style="">
+    <div flex style="background-color: #6494ed">
+      <div layout="column" layout-align="space-between stretch" style="">
+        <div flex layout-fill>
+          <md-card>
+            <md-card-content layout="row" layout-align="space-around center">
+              <h4 flex id="lucro-liquido-nr"> 1200 €</h4>
+              <h4 flex id="lucro-liquido">LUCRO<br>líquido</h4>
+            </md-card-content>
+          </md-card>
+        </div>
+        <div flex layout="row" layout-align="space-between stretch" style="" layout-fill>
+          <div flex>
+            <md-card>
+              <md-card-content>
+                AQUI 2
+              </md-card-content>
+            </md-card>
+          </div>
+          <div flex>
+            <md-card>
+              <md-card-content>
+                AQUI 3
+              </md-card-content>
+            </md-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div flex style="background-color: #91a74d">
+      <div flex layout="row" layout-align="space-between stretch" style="height: 100%" layout-fill>
+        <div flex>
+          <div layout="column" layout-align="space-between stretch" style="" layout-fill>
+            <div flex layout-fill>
+              <md-card>
+                <md-card-content>
+                  AQUI 5
+                </md-card-content>
+              </md-card>
+            </div>
+            <div flex layout-fill>
+              <md-card>
+                <md-card-content>
+                  AQUI 6
+                </md-card-content>
+              </md-card>
+            </div>
+          </div>
+        </div>
+        <div flex layout-fill style="height: 100%">
+          <md-card>
+            <md-card-content>
+              AQUI 3<br>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
