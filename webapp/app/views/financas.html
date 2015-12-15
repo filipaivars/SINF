@@ -11,6 +11,24 @@
 </div>
 
 <div class="wrap">
+  <div class="collapse navbar-collapse" id="js-navbar-collapse">
+    <ul class="nav navbar-nav" style="width: 100%">
+      <li><a id="linkmes" ng-href="#/vendas">MÊS</a></li>
+      <li><a id="linktrimestre" ng-href="#/vendas">TRIMESTRE</a></li>
+      <li><a id="linksemestre" ng-href="#/vendas">SEMESTRE</a></li>
+      <li><a id="linkano" ng-href="#/vendas">ANO</a></li>
+      <li style="float: right; width:15%; top:7.5px; padding-right: 8px">
+
+    <md-select ng-model="mes" aria-label="seleciona o mes" md-on-close="mudaMes()">
+      <md-option ng-value="mes" ng-repeat="mes in meses"> {{mes.name}}</md-option>
+    </md-select>
+
+      </li>
+    </ul>
+  </div>
+
+
+<div class="wrap">
   <div layout="row" layout-align="space-between stretch" style="">
     <div flex style="background-color: #6494ed">
       <div layout="column" layout-align="space-between stretch" style="">
@@ -94,4 +112,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
