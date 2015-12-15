@@ -45,6 +45,24 @@ angular.module('sinfApp')
     {nome: "verdocas", value: 300},
     {nome: "doraemon", value: 150}
   ];
+  $scope.data2=[
+    {nome: "teatro sa da bandeira", value: 300},
+    {nome: "rivoli", value: 200},
+    {nome: "pavilhão rosa mota", value: 150},
+    {nome: "coliseu lisboa", value: 80},
+    {nome: "coliseu porto", value: 700},
+    {nome: "tivoli", value: 300},
+    {nome: "centro cultural de belem", value: 200},
+    {nome: "casa da musica", value: 1020},
+    {nome: "centro cultural vila flor", value: 20},
+    {nome: "coliseu dos recreios", value: 1001},
+    {nome: "teatro camões", value: 300},
+    {nome: "culturgest", value: 150},
+    {nome: "palacio da bolsa", value: 20},
+    {nome: "teatro académico gil vicente", value: 200},
+    {nome: "teatro viriato", value: 300},
+    {nome: "teatro municipal sá de miranda", value: 700}
+  ];
   $scope.soma = 4421;
   $scope.porcento=function(value){
     return (value/$scope.soma)*100;

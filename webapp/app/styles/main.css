@@ -1,3 +1,7 @@
+.barra-pesq{
+  background-color: #f79022;
+}
+
 #qualidade-postos{
   font-family: 'PT Sans', sans-serif;
   color: #2C2C2C;
@@ -5,6 +9,7 @@
   font-weight: 400;
   font-size: 20px;
   padding-left: 5%;
+  overflow: scroll;
 }
 #qualidade-esp{
   font-family: 'PT Sans', sans-serif;
@@ -13,6 +18,9 @@
   font-weight: 400;
   font-size: 20px;
   padding-left: 5%;
+  h2{
+    font-size: 15px;
+  }
 }
 
 #aparece2{
