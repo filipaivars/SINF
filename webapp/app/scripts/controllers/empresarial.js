@@ -39,6 +39,25 @@ angular.module('sinfApp')
     {name: 'Abr, 2016', url: '12'},
   ];
 
+  // Informação do inventario
+  $scope.inventario=[
+    {nome: "teatro sa da bandeira", value: 300},
+    {nome: "rivoli", value: 200},
+
+  ];
+
+  $scope.getTotal = function(){
+      var total = 0;
+      for(var i = 0; i < $scope.inventario.length; i++){
+
+          total += $scope.inventario[i].value;
+      }
+      return total;
+  }
+  $scope.porcento=function(value){
+    return (value/$scope.getTotal())*100;
+  };
+
   //Mandar para aqui as localizações dos postos
   $scope.positions=["Porto","Lisboa","Vila Nova de Gaia","Cascais"];
 
@@ -53,5 +72,5 @@ angular.module('sinfApp')
 .controller("DoughnutCtrl_trabalhadores", function ($scope) {
   //Mandar para aqui os trabalhadores por posto
   $scope.labels = ["teatro sá da bandeira", "rivoli", "meo arena", "ccb"];
-  $scope.data = [300,120, 500, 100, 75];
+  $scope.data = [300,600, 500, 100, 75];
 });
