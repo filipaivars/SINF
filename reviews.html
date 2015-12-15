@@ -23,17 +23,17 @@
     <div flex style="width: 100%">
       <md-card>
         <md-card-content>
-          <div layout-fill layout="row" layout-align="center center">
-            <div flex="45" style="width:70px; overflow: auto">
-              <div id="bar-chart" ng-controller="BarCtrl_qual_postos" >
+          <div flex layout-fill layout="row" layout-align="center center">
+            <div flex="45" id="bar-chart" ng-controller="BarCtrl_qual_postos">
               <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels"
               chart-series="series" chart-options="options"></canvas>
-            </div>
             </div>
             <div id = "qualidade-postos" flex = "45">
               <h2>QUALIDADE</h2>
               postos de venda
             </div>
+          </div>
+          <div flex>
           </div>
         </md-card-content>
       </md-card>
@@ -42,27 +42,27 @@
       <div flex>
         <md-card>
           <md-card-content>
-            <md-toolbar ng-show="!showSearch2">
+            <md-toolbar ng-show="!showSearch">
               <div class="md-toolbar-tools">
                 <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
                   <ng-md-icon icon="menu"></ng-md-icon>
                 </md-button>
                 <span flex></span>
-                <md-button aria-label="Search" ng-click="showSearch2 = !showSearch2">
+                <md-button aria-label="Search" ng-click="showSearch = !showSearch">
                   <ng-md-icon icon="search"></ng-md-icon>
                 </md-button>
               </div>
             </md-toolbar>
-            <md-toolbar class="md-hue-1" ng-show="showSearch2">
+            <md-toolbar class="md-hue-1" ng-show="showSearch">
               <div class="md-toolbar-tools">
-                <md-button ng-click="showSearch2 = !showSearch2" aria-label="Back">
+                <md-button ng-click="showSearch = !showSearch" aria-label="Back">
                   <ng-md-icon icon="arrow_back"></ng-md-icon>
                 </md-button>
                 <md-input-container flex>
                   <label>&nbsp;</label>
-                  <input ng-model="search.who2" placeholder="procura espectáculos">
+                  <input ng-model="search.who" placeholder="procura espectáculos">
                 </md-input-container>
-                <md-button aria-label="Search" ng-click="showSearch2 = !showSearch2">
+                <md-button aria-label="Search" ng-click="showSearch = !showSearch">
                   <ng-md-icon icon="search"></ng-md-icon>
                 </md-button>
               </div>
@@ -70,7 +70,7 @@
             <div layout="row" layout-fill layout-align="center center">
               <div flex layout-align="center center" style="height: 225px; overflow: scroll">
                 <md-list>
-                  <md-item ng-repeat="item in data | filter:search.who2 | orderBy: 'nome'">
+                  <md-item ng-repeat="item in data | filter:search.who | orderBy: 'nome'">
                     <md-item-content>
                       <div layout="row" layout-fill layout-align="space-around start">
                         <div flex="60" >
@@ -82,8 +82,8 @@
                         </div>
                         <div flex ="40" style="text-align: left; font-family: 'Montserrat', sans-serif; padding-left:10px;">
                           <div style="width:200%; overflow: auto; white-space: nowrap;">
-                            {{item.nome}}
-                          </div>
+                          {{item.nome}}
+                        </div>
                         </div>
                       </div>
                     </md-item-content>
@@ -120,7 +120,7 @@
                 </md-button>
                 <md-input-container flex>
                   <label>&nbsp;</label>
-                  <input ng-model="search.who" placeholder="procura locais">
+                  <input ng-model="search.who" placeholder="procura espectáculos">
                 </md-input-container>
                 <md-button aria-label="Search" ng-click="showSearch = !showSearch">
                   <ng-md-icon icon="search"></ng-md-icon>
@@ -142,8 +142,8 @@
                         </div>
                         <div flex ="40" style="text-align: left; font-family: 'Montserrat', sans-serif; padding-left:10px;">
                           <div style="width:200%; overflow: auto; white-space: nowrap;">
-                            {{item.nome}}
-                          </div>
+                          {{item.nome}}
+                        </div>
                         </div>
                       </div>
                     </md-item-content>
