@@ -23,17 +23,17 @@
     <div flex style="width: 100%">
       <md-card>
         <md-card-content>
-          <div flex layout-fill layout="row" layout-align="center center">
-            <div flex="45" id="bar-chart" ng-controller="BarCtrl_qual_postos">
+          <div layout-fill layout="row" layout-align="center center">
+            <div flex="45" style="width:70px; overflow: auto">
+              <div id="bar-chart" ng-controller="BarCtrl_qual_postos" >
               <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels"
               chart-series="series" chart-options="options"></canvas>
+            </div>
             </div>
             <div id = "qualidade-postos" flex = "45">
               <h2>QUALIDADE</h2>
               postos de venda
             </div>
-          </div>
-          <div flex>
           </div>
         </md-card-content>
       </md-card>
@@ -82,8 +82,8 @@
                         </div>
                         <div flex ="40" style="text-align: left; font-family: 'Montserrat', sans-serif; padding-left:10px;">
                           <div style="width:200%; overflow: auto; white-space: nowrap;">
-                          {{item.nome}}
-                        </div>
+                            {{item.nome}}
+                          </div>
                         </div>
                       </div>
                     </md-item-content>
@@ -142,8 +142,8 @@
                         </div>
                         <div flex ="40" style="text-align: left; font-family: 'Montserrat', sans-serif; padding-left:10px;">
                           <div style="width:200%; overflow: auto; white-space: nowrap;">
-                          {{item.nome}}
-                        </div>
+                            {{item.nome}}
+                          </div>
                         </div>
                       </div>
                     </md-item-content>
