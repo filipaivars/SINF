@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 
- var sinfApp = angular.module('sinfApp', ['ngMap']);
+
 angular
   .module('sinfApp', [
     'ngAnimate',
@@ -23,7 +23,8 @@ angular
     'ngMaterial',
     'chart.js',
     'mwl.calendar',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngMap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
