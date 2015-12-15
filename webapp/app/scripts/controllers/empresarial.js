@@ -48,7 +48,7 @@ angular.module('sinfApp')
   //Mandar para aqui o volume de vendas por posto
   $scope.labels = ["teatro sá da bandeira", "rivoli", "meo arena", "ccb"];
   $scope.data = [300,120, 500, 100, 75];
-});
+})
 
 .controller("DoughnutCtrl_trabalhadores", function ($scope) {
   //Mandar para aqui os trabalhadores por posto

@@ -38,8 +38,7 @@
             vm.map.setCenter(obj.position);
           }
           (groupName == 'markers') && vm.objectChanged('markers');
-          (groupName == 'customMarkers')
-            && vm.objectChanged('customMarkers');
+          (groupName == 'customMarkers') && vm.objectChanged('customMarkers');
         }
       }
     };
@@ -63,8 +62,7 @@
         obj.map && obj.setMap && obj.setMap(null);
 
         (groupName == 'markers') && vm.objectChanged('markers');
-        (groupName == 'customMarkers')
-          && vm.objectChanged('customMarkers');
+        (groupName == 'customMarkers') && vm.objectChanged('customMarkers');
       }
     };
 
@@ -146,7 +144,7 @@
         vm.map.showInfoWindow = vm.showInfoWindow;
         vm.map.hideInfoWindow = vm.hideInfoWindow;
       }
-      
+
       // set options
       mapOptions.zoom = mapOptions.zoom || 15;
       var center = mapOptions.center;
@@ -202,10 +200,11 @@
      */
     var orgAttrs = Attr2MapOptions.orgAttributes($element);
     var filtered = Attr2MapOptions.filter($attrs);
-    var options = Attr2MapOptions.getOptions(filtered, null, $scope);
+    var options = Attr2MapOptions.getOptions(filtered, {scope: $scope});
     var controlOptions = Attr2MapOptions.getControlOptions(filtered);
     var mapOptions = angular.extend(options, controlOptions);
     var mapEvents = Attr2MapOptions.getEvents($scope, filtered);
+    Object.keys(mapEvents).length && console.log('ng-map Events', mapEvents);
 
     vm.mapOptions = mapOptions;
     vm.mapEvents = mapEvents;
