@@ -1,1 +1,82 @@
-<p>This is the REVIEWS view.</p>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans:700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="header" layout="row">
+  <h3 flex='85'>REVIEWS</h3>
+  <a ng-href="#/home" flex='15'>
+    <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
+  </a>
+</div>
+
+<div class="wrap">
+  <div layout="row">
+    <div flex>
+    </div>
+    <md-select ng-model="mes" aria-label="seleciona o mes" md-on-close="mudaMes()">
+      <md-option ng-value="mes" ng-repeat="mes in meses"> {{mes.name}}</md-option>
+    </md-select>
+  </div>
+
+
+  <div class="myLayout" layout-fill flex layout="column" layout-align="center start">
+    <div flex style="width: 100%">
+      <md-card>
+        <md-card-content>
+          <div flex layout-fill layout="row" layout-align="center center">
+            <div flex="45" id="bar-chart" ng-controller="BarCtrl_qual_postos">
+              <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels"
+              chart-series="series" chart-options="options"></canvas>
+            </div>
+            <div id = "qualidade-postos" flex = "45">
+              <h2>QUALIDADE</h2>
+              postos de venda
+            </div>
+          </div>
+          <div flex>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+    <div flex class="myLayout" layout-fill layout="row" layout-align="center start">
+      <div flex>
+        <md-card>
+          <md-card-content>
+            <div layout="row" layout-fill layout-align="space-around start">
+              <div flex>
+                <div layout="row" layout-fill layout-align="space-around start"  ng-repeat="item in data">
+                  <div flex="60" >
+                    <div id="myOtherBarra-hor" ng-style="{'width' : 100+'%'}">
+                      <div id="myBarra-hor" ng-style="{'width' : porcento(item.value)+'%'}"></div>
+                      <div id="aparece2">{{item.value}}: {{porcento(item.value).toFixed(2)}} %</div>
+                    </div>
+
+                  </div>
+                  <div flex ="40" style="text-align: right; font-family: 'Montserrat', sans-serif;">
+                    {{item.nome}}
+                  </div>
+                </div>
+              </div>
+              <div flex="40">
+                QUALIDADE
+              </div>
+            </div>
+
+
+
+
+          </md-card-content>
+        </md-card>
+      </div>
+      <div flex>
+        <md-card>
+          <md-card-content>
+            <barra-hor bla="data">
+            </barra-hor>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </div>
+</div>

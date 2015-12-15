@@ -4,9 +4,9 @@
 
 <div class="header" layout="row">
   <h3 flex='85'>INFORMAÇÃO DE VENDAS</h3>
-    <a ng-href="#/home" flex='15'>
-  <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
-</a>
+  <a ng-href="#/home" flex='15'>
+    <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
+  </a>
 </div>
 
 <div class="wrap">
@@ -17,11 +17,11 @@
       <li><a id="linksemestre" ng-href="#/vendas">SEMESTRE</a></li>
       <li><a id="linkano" ng-href="#/vendas">ANO</a></li>
       <li style="float: right; width:15%; top:7.5px; padding-right: 8px">
-        <form>
-          <div class="form-group">
-            <select class="form-control" ng-model="mes" ng-options="mes.url as mes.name for mes in meses" style="background-color: #2C2C2C; color: #FFFFFF"></select>
-          </div>
-        </form>
+
+    <md-select ng-model="mes" aria-label="seleciona o mes" md-on-close="mudaMes()">
+      <md-option ng-value="mes" ng-repeat="mes in meses"> {{mes.name}}</md-option>
+    </md-select>
+
       </li>
     </ul>
   </div>
@@ -30,10 +30,9 @@
 =======
 >>>>>>> 7561814b965d263def0bf89916a8d3000067e210
 
-
-  <md-content class="myLayout" layout-fill flex layout="row" layout-align="center start">
-    <md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex="50">
-      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+  <div class="myLayout" layout-fill flex layout="row" layout-align="center start">
+    <div class="myLayout" layout-fill layout="column" layout-align="center center" flex="50">
+      <div class="myLayout" layout-fill layout="row" layout-align="center center" >
 
         <md-card class="md-whiteframe-1dp" flex="45">
           <md-card-content layout-padding>
@@ -54,8 +53,8 @@
           </md-card-content>
         </md-card>
 
-      </md-content>
-      <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+      </div>
+      <div class="myLayout" layout-fill layout="row" layout-align="center center" >
 
         <md-card class="md-whiteframe-1dp" style="width:92.5%">
           <div layout-align="center center" >
@@ -106,10 +105,10 @@
     </div>
   </md-card>
 
-</md-content>
-</md-content>
-<md-content class="myLayout" layout-fill layout="column" layout-align="center center"  flex="50">
-  <md-content class="myLayout" layout-fill layout="row" flex layout-align="center center" >
+</div>
+</div>
+<div class="myLayout" layout-fill layout="column" layout-align="center center"  flex="50">
+  <div class="myLayout" layout-fill layout="row" flex layout-align="center center" >
     <h3 style="position: absolute; font-size: 15px; margin-top: 20px; padding-left: 20px"> hora </h3>
     <md-card class="md-whiteframe-1dp" flex="45" >
       <md-card-content layout-padding>
@@ -128,8 +127,8 @@
         </div>
       </md-card-content>
     </md-card>
-  </md-content>
-  <md-content class="myLayout" layout-fill layout="row" layout-align="center center" >
+  </div>
+  <div class="myLayout" layout-fill layout="row" layout-align="center center" >
     <md-card class="md-whiteframe-1dp" flex="45">
       <md-card-content layout-padding>
         <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> idade </h3>
@@ -148,8 +147,8 @@
         </div>
       </md-card-content>
     </md-card>
-  </md-content>
-  <md-content class="myLayout" layout-fill layout="row" layout-align="center center">
+  </div>
+  <div class="myLayout" layout-fill layout="row" layout-align="center center">
     <md-card class="md-whiteframe-1dp" style="width:92.5%">
       <md-card-content layout-padding>
         <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 127.5px"> volume médio de vendas por dia da semana </h3>
@@ -159,7 +158,7 @@
         </div>
       </md-card-content>
     </md-card>
-  </md-content>
-</md-content>
-</md-content>
+  </div>
+</div>
+</div>
 </div>
