@@ -8,6 +8,8 @@
  *
  * Main module of the application.
  */
+
+ var sinfApp = angular.module('sinfApp', ['ngMap']);
 angular
   .module('sinfApp', [
     'ngAnimate',

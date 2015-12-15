@@ -1,1 +1,78 @@
-<p>This is the INFORMAÇÃO EMPRESARIAL view.</p>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="header" layout="row">
+  <h3 flex='85'>INFORMAÇÃO EMPRESARIAL</h3>
+    <a ng-href="#/home" flex='15'>
+  <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
+</a>
+</div>
+
+<div class="wrap">
+  <div class="collapse navbar-collapse" id="js-navbar-collapse">
+    <ul class="nav navbar-nav" style="width: 100%">
+
+      <li style="float: right; width:15%; top:7.5px; padding-right: 8px">
+        <form>
+          <div class="form-group">
+            <select class="form-control" ng-model="mes" ng-options="mes.url as mes.name for mes in meses" style="background-color: #2C2C2C; color: #FFFFFF"></select>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<md-content class="myLayout" layout-fill flex layout="row" layout-align="center start">
+
+<md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex="60">
+
+<md-content class="myLayout" layout-fill layout="row" layout-align="center center" flex="50">
+
+  <md-card class="md-whiteframe-1dp" flex="45">
+    <md-card-content layout-padding>
+      <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Volume de vendas </h3>
+      <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_volumevendas">
+        <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+        chart-labels="labels" chart-legend="false"></canvas>
+      </div>
+    </md-card-content>
+  </md-card>
+
+  <md-card class="md-whiteframe-1dp" flex="45">
+    <md-card-content layout-padding>
+      <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Trabalhadores </h3>
+      <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_local">
+        <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+        chart-labels="labels" chart-legend="false"></canvas>
+      </div>
+    </md-card-content>
+  </md-card>
+
+</md-content>
+
+<md-content class="myLayout" layout-fill layout="row" layout-align="center center" flex="50">
+  <md-card class="md-whiteframe-1dp" flex="90">
+    <md-card-content layout-padding>
+      <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Inventário </h3>
+    <!--  <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_local">
+        <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+        chart-labels="labels" chart-legend="false"></canvas>
+      </div> -->
+    </md-card-content>
+  </md-card>
+</md-content>
+
+</md-content>
+
+<md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex="40">
+<md-card class="md-whiteframe-1dp" flex="90">
+  hello
+  <div map-lazy-load="https://maps.google.com/maps/api/js">
+  <ng-map center="41,-87" zoom="3"></ng-map>
+</div>
+</md-card>
+</md-content>
+
+</md-content>
