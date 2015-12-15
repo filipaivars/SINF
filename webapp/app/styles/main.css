@@ -1,3 +1,29 @@
+<<<<<<< HEAD
+#titulo-despesas{
+  font-family: 'PT Sans', sans-serif;
+  color: #11998c;
+  font-size: 35px;
+  text-align: center;
+  }
+
+#lista-despesas{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  color: #2d2d2c;
+}
+
+#total-despesas{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 25px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+#titulo-chart{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 15px; 
+  text-align: center;
+=======
 .barra-pesq{
   background-color: #f79022;
 }
@@ -50,18 +76,34 @@
 #qualidade-postos h2{
   font-size: 50px;
   font-weight: 700;
+>>>>>>> 851dab952ea051fe6e5972a416256af194d19c60
 }
 
 #lucro-liquido-nr{
   font-family: 'PT Sans', sans-serif;
-  font-size: 85px;
+  font-size: 75px;
+  color: #2d2d2c;
+  text-align: center;
+}
+
+#lucro-operacional-nr{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 30px;
   color: #2d2d2c;
 }
+
 #lucro-liquido{
   font-family: 'PT Sans', sans-serif;
   font-size: 60px;
   color: #11998c;
   padding-left: 55px;
+}
+
+#lucro-operacional{
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+  color: #11998c;
+  text-align: center;
 }
 
 .browsehappy {

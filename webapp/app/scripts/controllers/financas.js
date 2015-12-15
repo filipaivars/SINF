@@ -15,7 +15,24 @@ angular.module('sinfApp')
     'Karma'
   ];
 
-$scope.euroImg = $sce.trustAsResourceUrl('styles/euroazul.png'); 
+
+
+ $scope.despesas = [
+        {despesa:'Despesa 1',valor:35},
+        {despesa:'Despesa 2',valor:50},
+        {despesa:'Despesa 3',valor:70}
+    ];
+
+$scope.getTotal = function(){
+    var total = 0;
+    for(var i = 0; i < $scope.despesas.length; i++){
+      console.log($scope.despesas.length);
+        total += $scope.despesas[i].valor;
+    }
+    return total;
+}
+
+    $scope.euroImg = $sce.trustAsResourceUrl('styles/euroazul.png'); 
   
   Chart.defaults.global.colours = [
       { // orange

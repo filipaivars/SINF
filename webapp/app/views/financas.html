@@ -25,15 +25,21 @@
         <div flex layout="row" layout-align="space-between stretch" style="" layout-fill>
           <div flex>
             <md-card>
-              <md-card-content>
-                AQUI 2
+              <md-card-content  layout="column" layout-align="space-around center">
+                <h4 flex id="titulo-chart">Lucro</h4>
+                <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_lucro">
+                  <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+                   chart-labels="labels" chart-legend="false" height:"100px"></canvas>
+                   <h4 flex id="titulo-chart">Postos de Venda</h4>
+            </div>
               </md-card-content>
             </md-card>
           </div>
           <div flex>
             <md-card>
-              <md-card-content>
-                AQUI 3
+              <md-card-content layout="column" layout-align="space-around center">
+                <h4 flex id="lucro-operacional-nr"> 1200 €</h4>
+                <h4 flex id="lucro-operacional">CUSTOS<br>fixos</h4>
               </md-card-content>
             </md-card>
           </div>
@@ -46,24 +52,42 @@
           <div layout="column" layout-align="space-between stretch" style="" layout-fill>
             <div flex layout-fill>
               <md-card>
-                <md-card-content>
-                  AQUI 5
-                </md-card-content>
+                <md-card-content layout="column" layout-align="space-around center">
+                <img ng-src="{{euroImg}}" style="height: 100px">
+                <h4 flex id="lucro-operacional-nr"> 3600 €</h4>
+                <h4 flex id="lucro-operacional">LUCRO<br>operacional</h4>
+            </md-card-content>
+
               </md-card>
             </div>
             <div flex layout-fill>
               <md-card>
-                <md-card-content>
-                  AQUI 6
-                </md-card-content>
+                <md-card-content layout="column" layout-align="space-around center">
+                <h4 flex id="lucro-operacional-nr"> 1200 €</h4>
+                <h4 flex id="lucro-operacional">CUSTOS<br>variáveis</h4>
+              </md-card-content>
               </md-card>
             </div>
           </div>
         </div>
         <div flex layout-fill style="height: 100%">
           <md-card>
-            <md-card-content>
-              AQUI 3<br>
+             <md-card-content layout="column" layout-align="space-around ">
+              <h4 flex id="titulo-despesas">DESPESAS</h4>
+              <div ng-app="sinfApp" ng-controller="FinancasCtrl"> 
+                <md-card-content layout="column" layout-align="space-around center">
+                 <md-card-content layout-fill layout="row" layout-align="space-between start" ng-repeat="x in despesas">
+                  <h4 id="lista-despesas">{{x.despesa}}</h4>
+                  <h4 id="lista-despesas">{{x.valor}}</h4>
+                </md-card-content>
+              </div>
+              <div ng-app="sinfApp" ng-controller="FinancasCtrl" style="display: table; height: 40px; overflow: hidden;" layout-fill >
+              <div flex style="background-color: #FFA500; display: table-cell; vertical-align: middle;" layout-fill >
+                <h4 flex id="total-despesas">{{ getTotal() | currency: "€" }}</h4>
+              </div>
+
+              </div>
+              <script src="despesasController.js"></script>
             </md-card-content>
           </md-card>
         </div>

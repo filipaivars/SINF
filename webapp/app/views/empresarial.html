@@ -4,9 +4,9 @@
 
 <div class="header" layout="row">
   <h3 flex='85'>INFORMAÇÃO EMPRESARIAL</h3>
-    <a ng-href="#/home" flex='15'>
-  <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
-</a>
+  <a ng-href="#/home" flex='15'>
+    <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
+  </a>
 </div>
 
 <div class="wrap">
@@ -24,55 +24,107 @@
   </div>
 </div>
 
-<md-content class="myLayout" layout-fill flex layout="row" layout-align="center start">
 
-<md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex="60">
-
-<md-content class="myLayout" layout-fill layout="row" layout-align="center center" flex="50">
-
-  <md-card class="md-whiteframe-1dp" flex="45">
-    <md-card-content layout-padding>
-      <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Volume de vendas </h3>
-      <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_volumevendas">
-        <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
-        chart-labels="labels" chart-legend="false"></canvas>
+<!--
+<div class="myLayout" layout-fill layout="row" layout-align="center center" flex="60">
+  <div flex="50">
+    <div class="myLayout" layout-fill layout="column" layout-align="center center">
+      <div flex="45">
+        <md-card class="md-whiteframe-1dp" >
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Volume de vendas </h3>
+            <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_volumevendas">
+              <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+              chart-labels="labels" chart-legend="false"></canvas>
+            </div>
+          </md-card-content>
+        </md-card>
       </div>
-    </md-card-content>
-  </md-card>
-
-  <md-card class="md-whiteframe-1dp" flex="45">
+      <div flex="45">
+        <md-card class="md-whiteframe-1dp" flex="45">
+          <md-card-content layout-padding>
+            <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Trabalhadores </h3>
+            <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_local">
+              <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+              chart-labels="labels" chart-legend="false"></canvas>
+            </div>
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </div>
+  <div  layout-align="start stretch">
+  <md-card class="md-whiteframe-1dp">
     <md-card-content layout-padding>
-      <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Trabalhadores </h3>
+      <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Inventário </h3>
       <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_local">
         <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
         chart-labels="labels" chart-legend="false"></canvas>
       </div>
     </md-card-content>
   </md-card>
-
-</md-content>
-
-<md-content class="myLayout" layout-fill layout="row" layout-align="center center" flex="50">
-  <md-card class="md-whiteframe-1dp" flex="90">
-    <md-card-content layout-padding>
-      <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Inventário </h3>
-    <!--  <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_local">
-        <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
-        chart-labels="labels" chart-legend="false"></canvas>
-      </div> -->
-    </md-card-content>
-  </md-card>
-</md-content>
-
-</md-content>
-
-<md-content class="myLayout" layout-fill layout="column" layout-align="center center" flex="40">
-<md-card class="md-whiteframe-1dp" flex="90">
-  hello
-  <div map-lazy-load="https://maps.google.com/maps/api/js">
-  <ng-map center="41,-87" zoom="3"></ng-map>
 </div>
-</md-card>
-</md-content>
 
-</md-content>
+</div>
+
+<div class="myLayout" layout-fill layout="column" layout-align="center center" flex="40" style="height:300px">
+  <div class="myLayout" layout-fill layout="row" layout-align="center center" flex="100">
+    <md-card class="md-whiteframe-1dp"  flex="90">
+      <div ng-controller="MyController">
+        <ng-map center="39.5949065,-7.174563" zoom="7"></ng-map>
+      </div>
+    </md-card>
+  </div>
+</div>
+-->
+
+<div class="myLayout"  layout="row" layout-align="space-around stretch">
+  <div flex="70">
+    <div class="myLayout" layout-fill layout="column" layout-align="space-around stretch">
+      <div flex layout-fill>
+        <div class="myLayout" layout-fill layout="row" layout-align="space-around stretch">
+          <div flex >
+            <md-card class="md-whiteframe-1dp" >
+              <md-card-content layout-padding>
+                <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Volume de vendas </h3>
+                <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_volumevendas">
+                  <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+                  chart-labels="labels" chart-legend="false"></canvas>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+          <div flex >
+            <md-card class="md-whiteframe-1dp" >
+              <md-card-content layout-padding>
+                <h3 style="position: absolute; font-size: 15px; margin-top: 5px; padding-left: 5px"> Trabalhadores </h3>
+                <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_trabalhadores">
+                  <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
+                  chart-labels="labels" chart-legend="false"></canvas>
+                </div>
+              </md-card-content>
+            </md-card>
+          </div>
+        </div>
+      </div>
+      <div flex layout-fill style="background-color: green">
+        <md-card class="md-whiteframe-1dp" >
+          <md-card-content layout-padding>
+
+          </md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </div>
+  <div flex="30"  layout-fill >
+    <md-card class="md-whiteframe-1dp"  >
+      <md-card-content>
+    <div ng-controller="MyController" >
+      <ng-map center="39.5949065,-7.474563" zoom="7" style="height:620px">
+         <marker ng-repeat="pos in positions track by pos" position="{{pos}}"></marker>
+      </ng-map>
+    </div>
+  </md-card-content>
+  </md-card>
+  </div>
+</div>
