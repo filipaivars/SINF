@@ -1,3 +1,49 @@
+#qualidade-postos{
+  font-family: 'PT Sans', sans-serif;
+  color: #2C2C2C;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  padding-left: 5%;
+}
+#qualidade-esp{
+  font-family: 'PT Sans', sans-serif;
+  color: #2C2C2C;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  padding-left: 5%;
+}
+
+#aparece2{
+  display: none;
+  color: #f79022;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#myBarra-hor{
+  height:17.5px;
+  position: absolute;
+  background:#324155;
+  z-index: 3;
+}
+#myOtherBarra-hor{
+  height:17.5px;
+  background:#efefef;
+  position: relative;
+  z-index: 2;
+}
+
+#myOtherBarra-hor:hover #aparece2{
+  display: block;
+}
+
+#qualidade-postos h2{
+  font-size: 50px;
+  font-weight: 700;
+}
+
 #lucro-liquido-nr{
   font-family: 'PT Sans', sans-serif;
   font-size: 85px;
@@ -76,6 +122,11 @@ a:hover{
     padding-left: 90px;
     padding-right: 90px;
     background-color: #EFEFEF;
+
+}
+.wrap2{
+  height: 650px;
+  margin-left: 25px;
 }
 .myLayout{
     background-color: #EFEFEF;
