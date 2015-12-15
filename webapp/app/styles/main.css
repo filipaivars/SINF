@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #titulo-despesas{
   font-family: 'PT Sans', sans-serif;
   color: #11998c;
@@ -21,9 +21,9 @@
 
 #titulo-chart{
   font-family: 'PT Sans', sans-serif;
-  font-size: 15px; 
+  font-size: 15px;
   text-align: center;
-=======
+}
 .barra-pesq{
   background-color: #f79022;
 }
@@ -76,7 +76,6 @@
 #qualidade-postos h2{
   font-size: 50px;
   font-weight: 700;
->>>>>>> 851dab952ea051fe6e5972a416256af194d19c60
 }
 
 #lucro-liquido-nr{

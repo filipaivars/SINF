@@ -40,8 +40,7 @@ angular.module('ngMap', []);
             vm.map.setCenter(obj.position);
           }
           (groupName == 'markers') && vm.objectChanged('markers');
-          (groupName == 'customMarkers')
-            && vm.objectChanged('customMarkers');
+          (groupName == 'customMarkers') && vm.objectChanged('customMarkers');
         }
       }
     };
@@ -65,8 +64,7 @@ angular.module('ngMap', []);
         obj.map && obj.setMap && obj.setMap(null);
 
         (groupName == 'markers') && vm.objectChanged('markers');
-        (groupName == 'customMarkers')
-          && vm.objectChanged('customMarkers');
+        (groupName == 'customMarkers') && vm.objectChanged('customMarkers');
       }
     };
 
@@ -148,7 +146,7 @@ angular.module('ngMap', []);
         vm.map.showInfoWindow = vm.showInfoWindow;
         vm.map.hideInfoWindow = vm.hideInfoWindow;
       }
-      
+
       // set options
       mapOptions.zoom = mapOptions.zoom || 15;
       var center = mapOptions.center;
@@ -204,10 +202,11 @@ angular.module('ngMap', []);
      */
     var orgAttrs = Attr2MapOptions.orgAttributes($element);
     var filtered = Attr2MapOptions.filter($attrs);
-    var options = Attr2MapOptions.getOptions(filtered, null, $scope);
+    var options = Attr2MapOptions.getOptions(filtered, {scope: $scope});
     var controlOptions = Attr2MapOptions.getControlOptions(filtered);
     var mapOptions = angular.extend(options, controlOptions);
     var mapEvents = Attr2MapOptions.getEvents($scope, filtered);
+    Object.keys(mapEvents).length && void 0;
 
     vm.mapOptions = mapOptions;
     vm.mapEvents = mapEvents;
@@ -2325,6 +2324,14 @@ angular.module('ngMap', []);
           }
         } // catch(err2)
       } // catch(err)
+
+      // convert output more for center and position
+      if (
+        (options.key == 'center' || options.key == 'center') &&
+        output instanceof Array
+      ) {
+        output = new google.maps.LatLng(output[0], output[1]);
+      }
 
       // convert output more for shape bounds
       if (options.key == 'bounds' && output instanceof Array) {
