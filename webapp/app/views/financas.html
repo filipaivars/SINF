@@ -11,10 +11,26 @@
 </div>
 
 <div class="wrap">
-  <div layout="row" layout-align="space-between stretch" style="">
-    <div flex style="background-color: #6494ed">
+  <div class="collapse navbar-collapse" id="js-navbar-collapse">
+    <ul class="nav navbar-nav" style="width: 100%">
+      <li><a id="linkmes" ng-href="#/financas">MÊS</a></li>
+      <li><a id="linktrimestre" ng-href="#/financas">TRIMESTRE</a></li>
+      <li><a id="linksemestre" ng-href="#/financas">SEMESTRE</a></li>
+      <li><a id="linkano" ng-href="#/financas">ANO</a></li>
+      <li style="float: right; width:15%; top:7.5px; padding-right: 8px">
+
+    <md-select ng-model="mes" aria-label="seleciona o mes" md-on-close="mudaMes()">
+      <md-option ng-value="mes" ng-repeat="mes in meses"> {{mes.name}}</md-option>
+    </md-select>
+
+      </li>
+    </ul>
+  </div>
+
+  <div layout="row" layout-align="space-between stretch"  >
+    <div flex> <!-- style="background-color: #6494ed"-->
       <div layout="column" layout-align="space-between stretch" style="">
-        <div flex layout-fill>
+        <div flex layout-fill >
           <md-card>
             <md-card-content layout="row" layout-align="space-around center">
               <h4 flex id="lucro-liquido-nr"> 1200 €</h4>
@@ -23,6 +39,7 @@
           </md-card>
         </div>
         <div flex layout="row" layout-align="space-between stretch" style="" layout-fill>
+          
           <div flex>
             <md-card>
               <md-card-content  layout="column" layout-align="space-around center">
@@ -31,22 +48,30 @@
                   <canvas id="doughnut" class="chart chart-doughnut chart-xs" chart-data="data"
                    chart-labels="labels" chart-legend="false" height:"100px"></canvas>
                    <h4 flex id="titulo-chart">Postos de Venda</h4>
-            </div>
+                </div>
               </md-card-content>
             </md-card>
           </div>
+          
           <div flex>
+            
             <md-card>
-              <md-card-content layout="column" layout-align="space-around center">
+            <div style="height: 232px; padding-top:40px" >
+              <md-card-content layout="column" layout-align="space-around center" >
+              
                 <h4 flex id="lucro-operacional-nr"> 1200 €</h4>
                 <h4 flex id="lucro-operacional">CUSTOS<br>fixos</h4>
+                
               </md-card-content>
+              </div>
             </md-card>
+           
           </div>
+
         </div>
       </div>
     </div>
-    <div flex style="background-color: #91a74d">
+    <div flex ><!--style="background-color: #91a74d"-->
       <div flex layout="row" layout-align="space-between stretch" style="height: 100%" layout-fill>
         <div flex>
           <div layout="column" layout-align="space-between stretch" style="" layout-fill>
@@ -62,19 +87,22 @@
             </div>
             <div flex layout-fill>
               <md-card>
+              
                 <md-card-content layout="column" layout-align="space-around center">
                 <h4 flex id="lucro-operacional-nr"> 1200 €</h4>
                 <h4 flex id="lucro-operacional">CUSTOS<br>variáveis</h4>
               </md-card-content>
+         
               </md-card>
             </div>
+
           </div>
         </div>
-        <div flex layout-fill style="height: 100%">
+        <div flex layout-fill>
           <md-card>
-             <md-card-content layout="column" layout-align="space-around ">
+             <md-card-content layout="column" layout-align="space-around " >
               <h4 flex id="titulo-despesas">DESPESAS</h4>
-              <div ng-app="sinfApp" ng-controller="FinancasCtrl"> 
+              <div flex ng-app="sinfApp" ng-controller="FinancasCtrl" style="height: 290px; overflow: scroll"> 
                 <md-card-content layout="column" layout-align="space-around center">
                  <md-card-content layout-fill layout="row" layout-align="space-between start" ng-repeat="x in despesas">
                   <h4 id="lista-despesas">{{x.despesa}}</h4>
@@ -95,3 +123,4 @@
     </div>
   </div>
 </div>
+

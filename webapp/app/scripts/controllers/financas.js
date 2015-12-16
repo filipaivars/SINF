@@ -14,13 +14,34 @@ angular.module('sinfApp')
     'AngularJS',
     'Karma'
   ];
-
+  
+  $scope.mes= 'Nov, 2015'; //current
+  $scope.meses=[
+    {name: 'Nov, 2015', url: '1'},
+    {name: 'Dez, 2015', url: '2'},
+    {name: 'Jan, 2016', url: '3'},
+    {name: 'Fev, 2016', url: '4'},
+    {name: 'Mar, 2016', url: '5'},
+    {name: 'Abr, 2016', url: '6'},
+    {name: 'Mai, 2016', url: '7'},
+    {name: 'Jun, 2016', url: '8'},
+    {name: 'Jul, 2016', url: '9'},
+    {name: 'Ago, 2016', url: '10'},
+    {name: 'Set, 2016', url: '11'},
+    {name: 'Out, 2016', url: '12'}
+  ];
 
 
  $scope.despesas = [
         {despesa:'Despesa 1',valor:35},
         {despesa:'Despesa 2',valor:50},
-        {despesa:'Despesa 3',valor:70}
+        {despesa:'Despesa 3',valor:70},
+        {despesa:'Despesa 4',valor:10},
+        {despesa:'Despesa 5',valor:45},
+        {despesa:'Despesa 6',valor:50},
+        {despesa:'Despesa 4',valor:10},
+        {despesa:'Despesa 5',valor:45},
+        {despesa:'Despesa 6',valor:50}
     ];
 
 $scope.getTotal = function(){
