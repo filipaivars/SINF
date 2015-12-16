@@ -23,21 +23,24 @@ angular.module('sinfApp')
     'AngularJS',
     'Karma'
   ];
-  $scope.mes= '1';
+  var i = new Date();
+  $scope.mes= new Date(); //current
+
   $scope.meses=[
-    {name: 'Nov, 2015', url: '1'},
-    {name: 'Dez, 2015', url: '2'},
-    {name: 'Jan, 2016', url: '3'},
-    {name: 'Fev, 2016', url: '4'},
-    {name: 'Mar, 2016', url: '5'},
-    {name: 'Abr, 2016', url: '6'},
-    {name: 'Abr, 2016', url: '7'},
-    {name: 'Abr, 2016', url: '8'},
-    {name: 'Abr, 2016', url: '9'},
-    {name: 'Abr, 2016', url: '10'},
-    {name: 'Abr, 2016', url: '11'},
-    {name: 'Abr, 2016', url: '12'},
+    {name: $scope.mes},
+    {name: i.setMonth($scope.mes.getMonth()-1)},
+    {name: i.setMonth($scope.mes.getMonth()-2)},
+    {name: i.setMonth($scope.mes.getMonth()-3)},
+    {name: i.setMonth($scope.mes.getMonth()-4)},
+    {name: i.setMonth($scope.mes.getMonth()-5)},
+    {name: i.setMonth($scope.mes.getMonth()-6)},
+    {name: i.setMonth($scope.mes.getMonth()-7)},
+    {name: i.setMonth($scope.mes.getMonth()-8)},
+    {name: i.setMonth($scope.mes.getMonth()-9)},
+    {name: i.setMonth($scope.mes.getMonth()-10)},
+    {name: i.setMonth($scope.mes.getMonth()-11)}
   ];
+  $scope.mesSelected = $scope.meses[0];
 
   // Informação do inventario
   $scope.inventario=[

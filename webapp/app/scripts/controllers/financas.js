@@ -14,23 +14,24 @@ angular.module('sinfApp')
     'AngularJS',
     'Karma'
   ];
-  
-  $scope.mes= 'Nov, 2015'; //current
-  $scope.meses=[
-    {name: 'Nov, 2015', url: '1'},
-    {name: 'Dez, 2015', url: '2'},
-    {name: 'Jan, 2016', url: '3'},
-    {name: 'Fev, 2016', url: '4'},
-    {name: 'Mar, 2016', url: '5'},
-    {name: 'Abr, 2016', url: '6'},
-    {name: 'Mai, 2016', url: '7'},
-    {name: 'Jun, 2016', url: '8'},
-    {name: 'Jul, 2016', url: '9'},
-    {name: 'Ago, 2016', url: '10'},
-    {name: 'Set, 2016', url: '11'},
-    {name: 'Out, 2016', url: '12'}
-  ];
+  var i = new Date();
+  $scope.mes= new Date(); //current
 
+  $scope.meses=[
+    {name: $scope.mes},
+    {name: i.setMonth($scope.mes.getMonth()-1)},
+    {name: i.setMonth($scope.mes.getMonth()-2)},
+    {name: i.setMonth($scope.mes.getMonth()-3)},
+    {name: i.setMonth($scope.mes.getMonth()-4)},
+    {name: i.setMonth($scope.mes.getMonth()-5)},
+    {name: i.setMonth($scope.mes.getMonth()-6)},
+    {name: i.setMonth($scope.mes.getMonth()-7)},
+    {name: i.setMonth($scope.mes.getMonth()-8)},
+    {name: i.setMonth($scope.mes.getMonth()-9)},
+    {name: i.setMonth($scope.mes.getMonth()-10)},
+    {name: i.setMonth($scope.mes.getMonth()-11)}
+  ];
+  $scope.mesSelected = $scope.meses[0];
 
  $scope.despesas = [
         {despesa:'Despesa 1',valor:35},
@@ -39,9 +40,9 @@ angular.module('sinfApp')
         {despesa:'Despesa 4',valor:10},
         {despesa:'Despesa 5',valor:45},
         {despesa:'Despesa 6',valor:50},
-        {despesa:'Despesa 4',valor:10},
-        {despesa:'Despesa 5',valor:45},
-        {despesa:'Despesa 6',valor:50}
+        {despesa:'Despesa 7',valor:10},
+        {despesa:'Despesa 8',valor:45},
+        {despesa:'Despesa 9',valor:50}
     ];
 
 $scope.getTotal = function(){
@@ -53,8 +54,8 @@ $scope.getTotal = function(){
     return total;
 }
 
-    $scope.euroImg = $sce.trustAsResourceUrl('styles/euroazul.png'); 
-  
+    $scope.euroImg = $sce.trustAsResourceUrl('styles/euroazul.png');
+
   Chart.defaults.global.colours = [
       { // orange
           fillColor: "#F79022",
