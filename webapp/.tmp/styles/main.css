@@ -5,7 +5,9 @@
   font-size: 35px;
   text-align: center;
   }
-
+.search-placeholder::-webkit-input-placeholder{
+  color: #f8f8f2;
+}
 #lista-despesas{
   font-family: 'PT Sans', sans-serif;
   font-size: 20px;
