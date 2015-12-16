@@ -35,7 +35,13 @@ angular.module('sinfApp')
  $scope.despesas = [
         {despesa:'Despesa 1',valor:35},
         {despesa:'Despesa 2',valor:50},
-        {despesa:'Despesa 3',valor:70}
+        {despesa:'Despesa 3',valor:70},
+        {despesa:'Despesa 4',valor:10},
+        {despesa:'Despesa 5',valor:45},
+        {despesa:'Despesa 6',valor:50},
+        {despesa:'Despesa 4',valor:10},
+        {despesa:'Despesa 5',valor:45},
+        {despesa:'Despesa 6',valor:50}
     ];
 
 $scope.getTotal = function(){
