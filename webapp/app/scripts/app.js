@@ -25,7 +25,8 @@ angular
     'mwl.calendar',
     'ui.bootstrap',
     'ngMap',
-    'ngMdIcons'
+    'ngMdIcons',
+    'fmp-card'
   ])
   .config(function($mdThemingProvider) {
   $mdThemingProvider.definePalette('amazingPaletteName', {

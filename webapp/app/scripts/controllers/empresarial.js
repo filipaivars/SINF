@@ -162,7 +162,7 @@ angular.module('sinfApp')
   };
 
   //Mandar para aqui as localizações dos postos
-  $scope.positions=["Porto","Lisboa","Vila Nova de Gaia","Cascais"];
+  $scope.positions=["Rua direta do viso, 347, porto","Lisboa","Vila Nova de Gaia","Cascais"];
 
 })
 

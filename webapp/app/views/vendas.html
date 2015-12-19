@@ -18,9 +18,9 @@
       <li><a id="linkano" ng-href="#/vendas">ANO</a></li>
       <li style="float: right; width:15%; top:7.5px; padding-right: 8px">
 
-    <md-select ng-model="mes" aria-label="seleciona o mes" md-on-close="mudaMes()">
-      <md-option ng-value="mes" ng-repeat="mes in meses"> {{mes.name}}</md-option>
-    </md-select>
+        <md-select ng-model="mesSelected" aria-label="seleciona o mes" md-on-close="mudaMes()">
+          <md-option ng-value="mes" ng-repeat="mes in meses"> {{mes.name | date: 'MMM, yyyy'}}</md-option>
+        </md-select>
 
       </li>
     </ul>
