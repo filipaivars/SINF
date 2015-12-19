@@ -20,7 +20,8 @@
     "angular-bootstrap-calendar": "~0.17.0",
     "ui.bootstrap": "~0.14.3",
     "angular-bootstrap": "~0.14.3",
-    "ngmap": "~1.15.4"
+    "ngmap": "~1.15.4",
+    "fmp-card-directive": "angular-flip-card#*"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

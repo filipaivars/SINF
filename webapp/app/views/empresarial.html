@@ -25,13 +25,13 @@
 
 
 <div class="wrap">
-<div class="myLayout"  layout="row" layout-align="space-around stretch" style="height:700px">
+<div class="myLayout"  layout="row" layout-align="space-around stretch" style="height:660px">
   <div flex="70" >
-    <div class="myLayout" layout-fill layout="column" layout-align="space-around stretch">
+    <div layout-fill layout="column" layout-align="space-around stretch">
       <div flex layout-fill >
         <div class="myLayout" layout-fill layout="row" layout-align="space-around stretch" >
           <div flex >
-            <md-card class="md-whiteframe-1dp" style="height:312px; padding-top: 30px">
+            <md-card class="md-whiteframe-1dp" style="height:300px; padding-top: 30px">
               <md-card-content layout-padding>
                 <h3 style="position: relative; font-size: 15px; text-align:center; font-family: 'Montserrat', sans-serif; margin-top: 5px; padding-left: 5px"> Volume de vendas </h3>
                 <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_volumevendas">
@@ -42,7 +42,7 @@
             </md-card>
           </div>
           <div flex >
-            <md-card class="md-whiteframe-1dp" style="height:312px;  padding-top: 30px">
+            <md-card class="md-whiteframe-1dp" style="height:300px;  padding-top: 30px">
               <md-card-content layout-padding>
                 <h3 style="position: relative; font-size: 15px; text-align:center; font-family: 'Montserrat', sans-serif; margin-top: 5px; padding-left: 5px"> Trabalhadores </h3>
                 <div layout-align="center center" id="doughnut-chart" ng-controller="DoughnutCtrl_trabalhadores">
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div flex layout-fill >
-            <md-card class="md-whiteframe-1dp" style="height: 355px">
+            <md-card class="md-whiteframe-1dp" style="height: 330px">
               <md-card-content >
                 <md-toolbar ng-show="!showSearch">
                   <div class="md-toolbar-tools">
@@ -83,7 +83,7 @@
                   </div>
                 </md-toolbar>
                 <div layout="row" layout-fill layout-align="center center">
-                  <div flex layout-align="center center" style="height: 245px; overflow: scroll">
+                  <div flex layout-align="center center" style="height: 225px; overflow: scroll">
                     <md-list>
                       <md-item ng-repeat="item in inventario | filter:search.who | orderBy: 'nome'">
                         <md-item-content>
@@ -120,8 +120,8 @@
     <md-card class="md-whiteframe-1dp"  >
       <md-card-content>
     <div ng-controller="MyController" >
-      <ng-map center="39.5949065,-7.974563" zoom="7" style="height:650px">
-         <marker ng-repeat="pos in positions track by pos" position="{{pos}}"></marker>
+      <ng-map center="39.5949065,-7.974563" zoom="7" style="height:615px">
+         <marker ng-repeat="pos in positions track by pos" position="{{pos}}" title="{{pos}}"></marker>
       </ng-map>
     </div>
   </md-card-content>
