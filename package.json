@@ -1,0 +1,22 @@
+{
+  "name": "SINF",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-connect-proxy": "^0.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipaivars/SINF/issues"
+  },
+  "homepage": "https://github.com/filipaivars/SINF#readme"
+}

@@ -26,7 +26,8 @@ angular
     'ui.bootstrap',
     'ngMap',
     'ngMdIcons',
-    'fmp-card'
+    'fmp-card',
+    'ng-token-auth'
   ])
   .config(function($mdThemingProvider) {
   $mdThemingProvider.definePalette('amazingPaletteName', {

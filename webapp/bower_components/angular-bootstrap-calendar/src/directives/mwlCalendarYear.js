@@ -7,13 +7,14 @@ angular
   .controller('MwlCalendarYearCtrl', function($scope, moment, calendarHelper) {
 
     var vm = this;
+    vm.openMonthIndex = null;
 
     $scope.$on('calendar.refreshView', function() {
       vm.view = calendarHelper.getYearView(vm.events, vm.currentDay, vm.cellModifier);
 
       //Auto open the calendar to the current day if set
-      vm.openMonthIndex = null;
-      if (vm.cellIsOpen) {
+      if (vm.cellIsOpen && vm.openMonthIndex === null) {
+        vm.openMonthIndex = null;
         vm.view.forEach(function(month) {
           if (moment(vm.currentDay).startOf('month').isSame(month.date)) {
             vm.monthClicked(month, true);

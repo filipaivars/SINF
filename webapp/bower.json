@@ -22,7 +22,8 @@
     "angular-bootstrap": "~0.14.3",
     "ngmap": "~1.15.4",
     "fmp-card-directive": "angular-flip-card#*",
-    "jshint": "~2.9.0"
+    "jshint": "~2.9.0",
+    "ng-token-auth": "~0.0.28"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

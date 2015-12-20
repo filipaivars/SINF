@@ -17,7 +17,7 @@ angular.module('sinfApp')
 
   });
 })
-.controller('EmpresarialCtrl', function ($scope) {
+.controller('EmpresarialCtrl', function ($scope, $sce) {
   this.awesomeThings = [
     'HTML5 Boilerplate',
     'AngularJS',
@@ -25,7 +25,11 @@ angular.module('sinfApp')
   ];
   var i = new Date();
   $scope.mes= new Date(); //current
-
+  $scope.logout = function () {
+  $scope.errorMessage = null;
+  $scope.flagLogin = false;
+  //Session.save({email: email, password: password});
+};
   $scope.meses=[
     {name: $scope.mes},
     {name: i.setMonth($scope.mes.getMonth()-1)},
@@ -42,6 +46,7 @@ angular.module('sinfApp')
   ];
   $scope.mesSelected = $scope.meses[0];
 
+  $scope.loginImg = $sce.trustAsResourceUrl('images/login.png');
   // Informação do inventario
   $scope.inventario=[
     {nome: "coldplay", value: 300},

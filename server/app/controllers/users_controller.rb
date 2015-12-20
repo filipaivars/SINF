@@ -7,14 +7,15 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
-  def show
-  end
-
   # GET /users/new
   def new
     @user = User.new
+  end
+
+  # GET /users/1
+  # GET /users/1.json
+  def show
+    render json: @user
   end
 
   # GET /users/1/edit
@@ -24,12 +25,12 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-     user = User.new(user_params)
-     if user.save
-       session[:user_id] = user.id
-       redirect_to '/'
+     @user = User.new(user_params)
+     if @user.save
+       ConfirmAccount.welcome(@user).deliver_later
+      render json: @user, status: :created #, location: @user
      else
-       redirect_to '/signup'
+       render json: @user.errors, status: :unprocessable_entity
      end
    end
 
@@ -74,6 +75,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def confirm_account
+    @user = User.find(user_confirm_params[:id])
+    if (@user)
+      if @user.confirm_hash
+        if @user.confirm_hash.to_s == user_confirm_params[:hash].to_s
+          @user.update_attributes({:confirm_hash => nil})
+          render json: {status: 'confirmed'}
+        else
+          render json: {status: 'not_confirmed'}
+        end
+      else
+        render json: {status: 'already_confirmed'}
+      end
+    else
+      render json: {status: 'invalid'}
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -85,5 +104,12 @@ class UsersController < ApplicationController
 
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
+
+    def user_confirm_params
+    params.require(:id)
+    params.require(:hash)
+    params
+  end
+  
 
 end
