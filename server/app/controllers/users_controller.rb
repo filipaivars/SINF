@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-<<<<<<< HEAD
      user = User.new(user_params)
      if user.save
        session[:user_id] = user.id
@@ -43,23 +42,13 @@ class UsersController < ApplicationController
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
-=======
-    @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
->>>>>>> filipa
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
 
-<<<<<<< HEAD
-=======
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
@@ -74,7 +63,7 @@ class UsersController < ApplicationController
     end
   end
 
->>>>>>> filipa
+
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
@@ -93,11 +82,8 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-<<<<<<< HEAD
-  params.require(:user).permit(:name, :email, :password, :password_confirmation)
-end
-=======
+
       params.require(:user).permit(:email, :password_digest)
     end
->>>>>>> filipa
+
 end
