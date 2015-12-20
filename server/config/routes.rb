@@ -5,20 +5,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  get '/signup' => 'users#new'
-     post '/signup' => 'users#create'
 
+  Rails.application.routes.draw do
+    scope '/api' do
+      get '/confirm-account/', to: 'users#confirm_account'
+      resources :session, only: [:index, :create, :destroy]
 
+      resources :users, only: [:create, :update]
 
-
-    
-
-
-
-     get '/login' => 'sessions#new'
- post '/login' => 'sessions#create'
- get '/logout' => 'sessions#destroy'
-
+    end
+    match '(*foo)', to: 'index#index', via: [:get]
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

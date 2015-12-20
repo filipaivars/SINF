@@ -8,7 +8,7 @@
 * Controller of the sinfApp
 */
 angular.module('sinfApp')
-.controller('VendasCtrl', function ($scope) {
+.controller('VendasCtrl', function ($scope, $sce) {
 
 
 
@@ -19,7 +19,13 @@ angular.module('sinfApp')
   ];
   var i = new Date();
   $scope.mes= new Date(); //current
+  $scope.logout = function () {
+  $scope.errorMessage = null;
+  $scope.flagLogin = false;
+  //Session.save({email: email, password: password});
+  };
 
+  $scope.loginImg = $sce.trustAsResourceUrl('images/login.png');
   $scope.meses=[
     {name: $scope.mes},
     {name: i.setMonth($scope.mes.getMonth()-1)},

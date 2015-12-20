@@ -8,23 +8,38 @@
  * Controller of the sinfApp
  */
 angular.module('sinfApp')
-  .controller('MainCtrl', function ($scope, $sce) {
+  .controller('MainCtrl',['$scope', '$sce',  function ($scope, $sce) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    $scope.flagLogin = false;
+
+    $scope.login = function (email, password) {
+    $scope.errorMessage = null;
+    $scope.flagLogin = true;
+    //Session.save({email: email, password: password});
+  };
+  $scope.logout = function () {
+  $scope.errorMessage = null;
+  $scope.flagLogin = false;
+  //Session.save({email: email, password: password});
+};
 
     $scope.vendasImg = $sce.trustAsResourceUrl('styles/ticket.png');
     $scope.financasImg = $sce.trustAsResourceUrl('styles/euro.png');
     $scope.empresarialImg = $sce.trustAsResourceUrl('styles/company.png');
     $scope.reviewsImg = $sce.trustAsResourceUrl('styles/reviews.png');
+    $scope.loginImg = $sce.trustAsResourceUrl('images/login.png');
 
     $scope.user={
       email: '',
       pwd: ''
     };
-  }).config(function($mdThemingProvider) {
+
+
+  }]).config(function($mdThemingProvider) {
     $mdThemingProvider.definePalette('filipaPallete', {
     '50': 'ffebee',
     '100': 'ffcdd2',
@@ -48,5 +63,6 @@ angular.module('sinfApp')
   });
   // Configure a dark theme with primary foreground filipaPallete
   $mdThemingProvider.theme('docs-dark', 'default')
-    .primaryPalette('filipaPallete')
+    .primaryPalette('filipaPallete');
+
 });

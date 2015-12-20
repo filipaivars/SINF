@@ -8,16 +8,21 @@
 * Controller of the sinfApp
 */
 angular.module('sinfApp')
-.controller('ReviewsCtrl', function ($scope) {
+.controller('ReviewsCtrl', function ($scope, $sce) {
   this.awesomeThings = [
     'HTML5 Boilerplate',
     'AngularJS',
     'Karma'
   ];
-
+  $scope.logout = function () {
+  $scope.errorMessage = null;
+  $scope.flagLogin = false;
+  //Session.save({email: email, password: password});
+  };
   var i = new Date();
   $scope.mes= new Date(); //current
 
+  $scope.loginImg = $sce.trustAsResourceUrl('images/login.png');
   $scope.meses=[
     {name: $scope.mes},
     {name: i.setMonth($scope.mes.getMonth()-1)},

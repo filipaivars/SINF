@@ -4,7 +4,7 @@ var angular = require('angular');
 
 angular
   .module('mwl.calendar')
-  .controller('MwlDraggableCtrl', function($element, $scope, $window, $parse, $attrs, interact) {
+  .controller('MwlDraggableCtrl', function($element, $scope, $window, $parse, $attrs, $timeout, interact) {
 
     if (!interact) {
       return;
@@ -108,10 +108,13 @@ angular
             $scope.$apply();
           }
 
-          translateElement(elm, '')
-            .removeAttr('data-x')
-            .removeAttr('data-y')
-            .removeClass('dragging-active');
+          $timeout(function() {
+            translateElement(elm, '')
+              .css('z-index', 'auto')
+              .removeAttr('data-x')
+              .removeAttr('data-y')
+              .removeClass('dragging-active');
+          });
         }
 
       }

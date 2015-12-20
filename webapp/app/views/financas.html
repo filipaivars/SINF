@@ -4,10 +4,11 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="header" layout="row">
-  <h3 flex='85'>INFORMAÇÃO FINANCEIRA</h3>
+  <h3 flex>INFORMAÇÃO FINANCEIRA</h3>
   <a ng-href="#/home" flex='15'>
     <i class="material-icons" style="color: #FFFFFF; float: right; padding-top: 15px; padding-right:107.5px; font-size: 45px">home</i>
   </a>
+  <div ng-if="flagLogin" flex="25" style="height: 30px; text-align: right; padding-right: 100px; line-height: 70px; color: #fff"><a ng-click="logout()" ng-href="#/" style="color: #fff; padding-right: 30px">logout</a> <img ng-src="{{loginImg}}" style="height: 30px"> </div>
 </div>
 
 <div class="wrap">

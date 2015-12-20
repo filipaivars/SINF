@@ -1,6 +1,6 @@
 /**
  * angular-bootstrap-calendar - A pure AngularJS bootstrap themed responsive calendar that can display events and has views for year, month, week and day
- * @version v0.17.0
+ * @version v0.17.6
  * @link https://github.com/mattlewis92/angular-bootstrap-calendar
  * @license MIT
  */
@@ -485,6 +485,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var vm = this;
 	    vm.calendarConfig = calendarConfig;
+	    vm.openRowIndex = null;
 
 	    $scope.$on('calendar.refreshView', function() {
 
@@ -498,8 +499,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 
 	      //Auto open the calendar to the current day if set
-	      vm.openDayIndex = null;
-	      if (vm.cellIsOpen) {
+	      if (vm.cellIsOpen && vm.openRowIndex === null) {
+	        vm.openDayIndex = null;
 	        vm.view.forEach(function(day) {
 	          if (day.inMonth && moment(vm.currentDay).startOf('day').isSame(day.date)) {
 	            vm.dayClicked(day, true);
@@ -672,16 +673,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        vm.dayViewEnd,
 	        vm.dayViewSplit
 	      );
-
-	      vm.view = calendarHelper.getWeekView(vm.events, vm.currentDay, vm.showTimes);
 	      if (vm.showTimes) {
-	        vm.viewWithTimes = calendarHelper.getWeekViewWithTimes(
+	        vm.view = calendarHelper.getWeekViewWithTimes(
 	          vm.events,
 	          vm.currentDay,
 	          vm.dayViewStart,
 	          vm.dayViewEnd,
 	          vm.dayViewSplit
 	        );
+	      } else {
+	        vm.view = calendarHelper.getWeekView(vm.events, vm.currentDay);
 	      }
 	    });
 
@@ -728,31 +729,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      event.tempStartsAt = moment(event.startsAt).add(minutesDiff, 'minutes').toDate();
 	    };
 
-	    vm.eventResizeComplete = function(event, edge, minuteChunksMoved) {
-	      var minutesDiff = minuteChunksMoved * vm.dayViewSplit;
-	      var start = moment(event.startsAt);
-	      var end = moment(event.endsAt);
-	      if (edge === 'start') {
-	        start.add(minutesDiff, 'minutes');
-	      } else {
-	        end.add(minutesDiff, 'minutes');
-	      }
-	      delete event.tempStartsAt;
-
-	      vm.onEventTimesChanged({
-	        calendarEvent: event,
-	        calendarNewEventStart: start.toDate(),
-	        calendarNewEventEnd: end.toDate()
-	      });
-	    };
-
-	    vm.eventResized = function(event, edge, minuteChunksMoved) {
-	      var minutesDiff = minuteChunksMoved * vm.dayViewSplit;
-	      if (edge === 'start') {
-	        event.tempStartsAt = moment(event.startsAt).add(minutesDiff, 'minutes').toDate();
-	      }
-	    };
-
 	  }])
 	  .directive('mwlCalendarWeek', ["calendarUseTemplates", function(calendarUseTemplates) {
 
@@ -767,7 +743,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        onEventTimesChanged: '=',
 	        dayViewStart: '=',
 	        dayViewEnd: '=',
-	        dayViewSplit: '='
+	        dayViewSplit: '=',
+	        onTimespanClick: '='
 	      },
 	      controller: 'MwlCalendarWeekCtrl as vm',
 	      link: function(scope, element, attrs, calendarCtrl) {
@@ -792,13 +769,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	  .controller('MwlCalendarYearCtrl', ["$scope", "moment", "calendarHelper", function($scope, moment, calendarHelper) {
 
 	    var vm = this;
+	    vm.openMonthIndex = null;
 
 	    $scope.$on('calendar.refreshView', function() {
 	      vm.view = calendarHelper.getYearView(vm.events, vm.currentDay, vm.cellModifier);
 
 	      //Auto open the calendar to the current day if set
-	      vm.openMonthIndex = null;
-	      if (vm.cellIsOpen) {
+	      if (vm.cellIsOpen && vm.openMonthIndex === null) {
+	        vm.openMonthIndex = null;
 	        vm.view.forEach(function(month) {
 	          if (moment(vm.currentDay).startOf('month').isSame(month.date)) {
 	            vm.monthClicked(month, true);
@@ -968,7 +946,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	angular
 	  .module('mwl.calendar')
-	  .controller('MwlDraggableCtrl', ["$element", "$scope", "$window", "$parse", "$attrs", "interact", function($element, $scope, $window, $parse, $attrs, interact) {
+	  .controller('MwlDraggableCtrl', ["$element", "$scope", "$window", "$parse", "$attrs", "$timeout", "interact", function($element, $scope, $window, $parse, $attrs, $timeout, interact) {
 
 	    if (!interact) {
 	      return;
@@ -1072,10 +1050,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	            $scope.$apply();
 	          }
 
-	          translateElement(elm, '')
-	            .removeAttr('data-x')
-	            .removeAttr('data-y')
-	            .removeClass('dragging-active');
+	          $timeout(function() {
+	            translateElement(elm, '')
+	              .css('z-index', 'auto')
+	              .removeAttr('data-x')
+	              .removeAttr('data-y')
+	              .removeClass('dragging-active');
+	          });
 	        }
 
 	      }
@@ -1183,7 +1164,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	angular
 	  .module('mwl.calendar')
-	  .controller('MwlResizableCtrl', ["$element", "$scope", "$parse", "$attrs", "interact", function($element, $scope, $parse, $attrs, interact) {
+	  .controller('MwlResizableCtrl', ["$element", "$scope", "$parse", "$attrs", "$timeout", "interact", function($element, $scope, $parse, $attrs, $timeout, interact) {
 
 	    if (!interact) {
 	      return;
@@ -1281,14 +1262,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	          var elm = angular.element(event.target);
 	          var unitsResized = getUnitsResized(resizeEdge, elm, snapGridDimensions);
 
-	          elm
-	            .data('x', null)
-	            .data('y', null)
-	            .css({
-	              transform: '',
-	              width: originalDimensionsStyle.width,
-	              height: originalDimensionsStyle.height
-	            });
+	          $timeout(function() {
+	            elm
+	              .data('x', null)
+	              .data('y', null)
+	              .css({
+	                transform: '',
+	                width: originalDimensionsStyle.width,
+	                height: originalDimensionsStyle.height
+	              });
+	          });
 
 	          if ($attrs.onResizeEnd) {
 	            $parse($attrs.onResizeEnd)($scope, unitsResized);
@@ -1774,7 +1757,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    }
 
-	    function getWeekView(events, currentDay, filterOneDayEvents) {
+	    function getWeekView(events, currentDay) {
 
 	      var startOfWeek = moment(currentDay).startOf('week');
 	      var endOfWeek = moment(currentDay).endOf('week');
@@ -1792,12 +1775,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	          isWeekend: [0, 6].indexOf(dayCounter.day()) > -1
 	        });
 	        dayCounter.add(1, 'day');
-	      }
-
-	      if (filterOneDayEvents) {
-	        events = events.filter(function(event) {
-	          return !moment(event.startsAt).isSame(moment(event.endsAt), 'day');
-	        });
 	      }
 
 	      var eventsSorted = filterEventsInPeriod(events, startOfWeek, endOfWeek).map(function(event) {
@@ -1834,44 +1811,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    }
 
-	    function getCrossingsCount(event, dayEvents) {
-	      var eventStart = moment(event.startsAt);
-	      var eventEnd = moment(event.endsAt);
+	    function getDayView(events, currentDay, dayViewStart, dayViewEnd, dayViewSplit) {
 
-	      return dayEvents.filter(function(ev) {
-
-	        return event.$id !== ev.$id &&
-	          (moment(ev.startsAt).isBetween(eventStart, eventEnd) ||
-	          moment(ev.startsAt).isSame(eventStart) ||
-	          moment(ev.endsAt).isBetween(eventStart, eventEnd) ||
-	          moment(ev.endsAt).isSame(eventEnd) ||
-	          moment(ev.startsAt).isBefore(eventStart) && moment(ev.endsAt).isAfter(eventEnd));
-	      }).length;
-	    }
-
-	    function eventsComparer(a, b) {
-	      var aStart = moment(a.startsAt);
-	      var bStart = moment(b.startsAt);
-
-	      if (aStart.isBefore(bStart)) {
-	        return -1;
-	      }
-
-	      if (aStart.isSame(bStart)) {
-	        var aEnd = moment(a.endsAt);
-	        var bEnd = moment(b.endsAt);
-
-	        if (aEnd.isSame(bEnd)) {
-	          return 0;
-	        } else if (aEnd.isAfter(bEnd)) {
-	          return -1;
-	        }
-	        return 1;
-	      }
-	    }
-
-	    function getDayView(events, currentDay, dayViewStart, dayViewEnd, dayViewSplit, isWeekViewWithTimes) {
-	      var baseBucketWidth = isWeekViewWithTimes ? 14.285714285714285 : 150;
 	      var dayStartHour = moment(dayViewStart || '00:00', 'HH:mm').hours();
 	      var dayEndHour = moment(dayViewEnd || '23:00', 'HH:mm').hours();
 	      var hourHeight = (60 / dayViewSplit) * 30;
@@ -1886,7 +1827,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        moment(currentDay).endOf('day').toDate()
 	      );
 
-	      return eventsInPeriod.sort(eventsComparer).map(function(event) {
+	      return eventsInPeriod.map(function(event) {
 	        if (moment(event.startsAt).isBefore(calendarStart)) {
 	          event.top = 0;
 	        } else {
@@ -1912,10 +1853,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 
 	        event.left = 0;
+
 	        return event;
 	      }).filter(function(event) {
 	        return event.height > 0;
 	      }).map(function(event) {
+
 	        var cannotFitInABucket = true;
 	        buckets.forEach(function(bucket, bucketIndex) {
 	          var canFitInThisBucket = true;
@@ -1929,47 +1872,36 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	          if (canFitInThisBucket && cannotFitInABucket) {
 	            cannotFitInABucket = false;
-	            event.left = bucketIndex * baseBucketWidth;
-	            if (isWeekViewWithTimes) {
-	              event.bucketIndex = buckets.length;
-	            }
+	            event.left = bucketIndex * 150;
 	            buckets[bucketIndex].push(event);
 	          }
+
 	        });
 
 	        if (cannotFitInABucket) {
-	          event.left = buckets.length * baseBucketWidth;
-	          if (isWeekViewWithTimes) {
-	            event.bucketIndex = buckets.length;
-	          }
+	          event.left = buckets.length * 150;
 	          buckets.push([event]);
 	        }
+
 	        return event;
-	      }).map(function(event) {
-	        if (isWeekViewWithTimes) {
-	          event.width = getCrossingsCount(event, eventsInPeriod) > 0 ? baseBucketWidth / buckets.length : baseBucketWidth;
-	          event.left = event.bucketIndex * baseBucketWidth / (buckets.length);
-	          delete event.bucketIndex;
-	        }
-	        return event;
+
 	      });
+
 	    }
 
 	    function getWeekViewWithTimes(events, currentDay, dayViewStart, dayViewEnd, dayViewSplit) {
-	      var weekView = getWeekView(events, currentDay, false);
+	      var weekView = getWeekView(events, currentDay);
 	      var newEvents = [];
 	      weekView.days.forEach(function(day) {
 	        var dayEvents = weekView.events.filter(function(event) {
-	          return moment(event.startsAt).isSame(moment(day.date), 'day') &&
-	            moment(event.endsAt).isSame(moment(day.date), 'day');
+	          return moment(event.startsAt).startOf('day').isSame(moment(day.date).startOf('day'));
 	        });
 	        var newDayEvents = getDayView(
 	          dayEvents,
 	          day.date,
 	          dayViewStart,
 	          dayViewEnd,
-	          dayViewSplit,
-	          true
+	          dayViewSplit
 	        );
 	        newEvents = newEvents.concat(newDayEvents);
 	      });
@@ -1994,9 +1926,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      getDayViewHeight: getDayViewHeight,
 	      adjustEndDateFromStartDiff: adjustEndDateFromStartDiff,
 	      formatDate: formatDate,
-	      eventIsInPeriod: eventIsInPeriod, //expose for testing only
-	      getCrossingsCount: getCrossingsCount, //expose for testing only
-	      eventsComparer: eventsComparer //expose for testing only
+	      eventIsInPeriod: eventIsInPeriod //expose for testing only
 	    };
 
 	  }]);
