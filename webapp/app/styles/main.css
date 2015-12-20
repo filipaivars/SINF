@@ -6,16 +6,17 @@
   padding-top: 10%;
 }
 
-#login-view h2{
-  margin: 0;
+#login-header{
+  background-color: #11998c;
+  height: 30%;
+  width: 100%;
 }
 
-#login-wrap{
-  width:50%;
-  margin-left: 25%;
-  margin-right: 25%;
-  height: 75%;
-  padding-top: 15px;
+#login-header h2{
+  margin: 0;
+}
+#login-header h4{
+  margin: 0;
 }
 
 #home-bars{
